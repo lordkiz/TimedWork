@@ -15,6 +15,7 @@
 		46B1D5182B08B8030091E1A9 /* TimedWorkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B1D5172B08B8030091E1A9 /* TimedWorkTests.swift */; };
 		46B1D5222B08B8030091E1A9 /* TimedWorkUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B1D5212B08B8030091E1A9 /* TimedWorkUITests.swift */; };
 		46B1D5242B08B8030091E1A9 /* TimedWorkUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B1D5232B08B8030091E1A9 /* TimedWorkUITestsLaunchTests.swift */; };
+		46D1D67E2B0A630B00E7B31D /* PreSetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D1D67D2B0A630B00E7B31D /* PreSetupViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		46B1D51D2B08B8030091E1A9 /* TimedWorkUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TimedWorkUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		46B1D5212B08B8030091E1A9 /* TimedWorkUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimedWorkUITests.swift; sourceTree = "<group>"; };
 		46B1D5232B08B8030091E1A9 /* TimedWorkUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimedWorkUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		46D1D67D2B0A630B00E7B31D /* PreSetupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreSetupViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,13 +99,11 @@
 		46B1D5012B08B8010091E1A9 /* TimedWork */ = {
 			isa = PBXGroup;
 			children = (
-				46B1D5322B08C5E70091E1A9 /* ViewModel */,
-				46B1D5312B08C5D70091E1A9 /* View */,
+				46D1D67C2B0A61E000E7B31D /* Support */,
+				46B1D5322B08C5E70091E1A9 /* UI */,
+				46B1D5312B08C5D70091E1A9 /* View Controllers */,
 				46B1D5302B08C5BF0091E1A9 /* Model */,
-				46B1D5022B08B8010091E1A9 /* AppDelegate.swift */,
-				46B1D5042B08B8010091E1A9 /* HomeViewController.swift */,
 				46B1D5092B08B8020091E1A9 /* Assets.xcassets */,
-				46B1D50B2B08B8020091E1A9 /* Main.storyboard */,
 				46B1D50E2B08B8030091E1A9 /* TimedWork.entitlements */,
 				46B1D5062B08B8010091E1A9 /* TimedWork.xcdatamodeld */,
 			);
@@ -134,18 +134,29 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		46B1D5312B08C5D70091E1A9 /* View */ = {
+		46B1D5312B08C5D70091E1A9 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				46B1D5042B08B8010091E1A9 /* HomeViewController.swift */,
+				46D1D67D2B0A630B00E7B31D /* PreSetupViewController.swift */,
 			);
-			path = View;
+			path = "View Controllers";
 			sourceTree = "<group>";
 		};
-		46B1D5322B08C5E70091E1A9 /* ViewModel */ = {
+		46B1D5322B08C5E70091E1A9 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				46B1D50B2B08B8020091E1A9 /* Main.storyboard */,
 			);
-			path = ViewModel;
+			path = UI;
+			sourceTree = "<group>";
+		};
+		46D1D67C2B0A61E000E7B31D /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				46B1D5022B08B8010091E1A9 /* AppDelegate.swift */,
+			);
+			path = Support;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -280,6 +291,7 @@
 			files = (
 				46B1D5052B08B8010091E1A9 /* HomeViewController.swift in Sources */,
 				46B1D5032B08B8010091E1A9 /* AppDelegate.swift in Sources */,
+				46D1D67E2B0A630B00E7B31D /* PreSetupViewController.swift in Sources */,
 				46B1D5082B08B8010091E1A9 /* TimedWork.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
