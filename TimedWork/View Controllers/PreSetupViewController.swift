@@ -64,6 +64,6 @@ class PreSetupViewController: NSViewController {
         else {
             return
         }
-        present(vc, animator: SlideInFromLeftAnimator())
+        pushIntoView(presentingVC: self, presentedVC: vc, animator: SlideInFromLeftAnimator())
     }
 }

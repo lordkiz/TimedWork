@@ -11,7 +11,7 @@ private class BackgroundView: NSView {
     override init(frame frameRect: NSRect) {
         super.init(frame: frameRect)
         wantsLayer = true
-        layer?.backgroundColor = NSColor(calibratedHue: 0.5, saturation: 0.7, brightness: 0.2, alpha: 0.5).cgColor
+        layer?.backgroundColor = NSColor(red: 0, green: 0, blue: 0, alpha: 0.5).cgColor
     }
     
     required init?(coder: NSCoder) {
@@ -53,7 +53,7 @@ class SlideInFromLeftAnimator: NSObject, NSViewControllerPresentationAnimator {
     
     func animateDismissal(of viewController: NSViewController, from fromViewController: NSViewController) {
         NSAnimationContext.runAnimationGroup({ _ in
-            self.backgroundView.alphaValue = 0
+            self.backgroundView.animator().alphaValue = 0
             self.leftAnchor.animator().constant = 600
         }, completionHandler: {
             self.backgroundView.removeFromSuperview()

@@ -19,6 +19,11 @@
 		46D1D6832B0C7FD700E7B31D /* SetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D1D6822B0C7FD700E7B31D /* SetupViewController.swift */; };
 		46D1D6862B0D3DDA00E7B31D /* FadeInAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D1D6852B0D3DDA00E7B31D /* FadeInAnimator.swift */; };
 		46D1D6882B0D5D6100E7B31D /* SlideInFromLeftAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D1D6872B0D5D6100E7B31D /* SlideInFromLeftAnimator.swift */; };
+		46D1D6912B0E983E00E7B31D /* NavigationState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D1D6902B0E983E00E7B31D /* NavigationState.swift */; };
+		46D1D6932B0EA2CC00E7B31D /* NSViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D1D6922B0EA2CC00E7B31D /* NSViewController+Extensions.swift */; };
+		46D1D6972B0EA75500E7B31D /* MainWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D1D6962B0EA75500E7B31D /* MainWindowController.swift */; };
+		46D1D69A2B0EA90300E7B31D /* ToolbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D1D6992B0EA90300E7B31D /* ToolbarController.swift */; };
+		46D1D69C2B0EB3D200E7B31D /* NSToolbar+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D1D69B2B0EB3D200E7B31D /* NSToolbar+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +60,11 @@
 		46D1D6822B0C7FD700E7B31D /* SetupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupViewController.swift; sourceTree = "<group>"; };
 		46D1D6852B0D3DDA00E7B31D /* FadeInAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FadeInAnimator.swift; sourceTree = "<group>"; };
 		46D1D6872B0D5D6100E7B31D /* SlideInFromLeftAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideInFromLeftAnimator.swift; sourceTree = "<group>"; };
+		46D1D6902B0E983E00E7B31D /* NavigationState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationState.swift; sourceTree = "<group>"; };
+		46D1D6922B0EA2CC00E7B31D /* NSViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSViewController+Extensions.swift"; sourceTree = "<group>"; };
+		46D1D6962B0EA75500E7B31D /* MainWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWindowController.swift; sourceTree = "<group>"; };
+		46D1D6992B0EA90300E7B31D /* ToolbarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarController.swift; sourceTree = "<group>"; };
+		46D1D69B2B0EB3D200E7B31D /* NSToolbar+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSToolbar+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +115,7 @@
 		46B1D5012B08B8010091E1A9 /* TimedWork */ = {
 			isa = PBXGroup;
 			children = (
+				46D1D68D2B0E8F7E00E7B31D /* Protocols */,
 				46D1D6812B0AA33000E7B31D /* Extensions */,
 				46D1D67C2B0A61E000E7B31D /* Support */,
 				46B1D5322B08C5E70091E1A9 /* UI */,
@@ -137,6 +148,7 @@
 		46B1D5302B08C5BF0091E1A9 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				46D1D6902B0E983E00E7B31D /* NavigationState.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -162,6 +174,7 @@
 		46D1D67C2B0A61E000E7B31D /* Support */ = {
 			isa = PBXGroup;
 			children = (
+				46D1D6982B0EA8CD00E7B31D /* Controllers */,
 				46D1D6842B0D3DB500E7B31D /* Animators */,
 				46B1D5022B08B8010091E1A9 /* AppDelegate.swift */,
 			);
@@ -171,6 +184,8 @@
 		46D1D6812B0AA33000E7B31D /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				46D1D6922B0EA2CC00E7B31D /* NSViewController+Extensions.swift */,
+				46D1D69B2B0EB3D200E7B31D /* NSToolbar+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -182,6 +197,22 @@
 				46D1D6872B0D5D6100E7B31D /* SlideInFromLeftAnimator.swift */,
 			);
 			path = Animators;
+			sourceTree = "<group>";
+		};
+		46D1D68D2B0E8F7E00E7B31D /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		46D1D6982B0EA8CD00E7B31D /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				46D1D6962B0EA75500E7B31D /* MainWindowController.swift */,
+				46D1D6992B0EA90300E7B31D /* ToolbarController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -314,11 +345,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				46D1D6912B0E983E00E7B31D /* NavigationState.swift in Sources */,
 				46B1D5052B08B8010091E1A9 /* HomeViewController.swift in Sources */,
 				46D1D6862B0D3DDA00E7B31D /* FadeInAnimator.swift in Sources */,
+				46D1D69A2B0EA90300E7B31D /* ToolbarController.swift in Sources */,
+				46D1D6932B0EA2CC00E7B31D /* NSViewController+Extensions.swift in Sources */,
 				46B1D5032B08B8010091E1A9 /* AppDelegate.swift in Sources */,
 				46D1D67E2B0A630B00E7B31D /* PreSetupViewController.swift in Sources */,
 				46D1D6882B0D5D6100E7B31D /* SlideInFromLeftAnimator.swift in Sources */,
+				46D1D69C2B0EB3D200E7B31D /* NSToolbar+Extensions.swift in Sources */,
+				46D1D6972B0EA75500E7B31D /* MainWindowController.swift in Sources */,
 				46B1D5082B08B8010091E1A9 /* TimedWork.xcdatamodeld in Sources */,
 				46D1D6832B0C7FD700E7B31D /* SetupViewController.swift in Sources */,
 			);
