@@ -13,6 +13,7 @@ class HomeViewController: NSViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setUpWindow()
         addPreSetupViewController()
         // Do any additional setup after loading the view.
     }
@@ -32,7 +33,11 @@ class HomeViewController: NSViewController {
         homeContentView.addSubview(vc.view)
         
     }
-
+    
+    fileprivate func setUpWindow() {
+        
+    }
+    
 
 }
 

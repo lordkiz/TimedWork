@@ -16,6 +16,9 @@
 		46B1D5222B08B8030091E1A9 /* TimedWorkUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B1D5212B08B8030091E1A9 /* TimedWorkUITests.swift */; };
 		46B1D5242B08B8030091E1A9 /* TimedWorkUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B1D5232B08B8030091E1A9 /* TimedWorkUITestsLaunchTests.swift */; };
 		46D1D67E2B0A630B00E7B31D /* PreSetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D1D67D2B0A630B00E7B31D /* PreSetupViewController.swift */; };
+		46D1D6832B0C7FD700E7B31D /* SetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D1D6822B0C7FD700E7B31D /* SetupViewController.swift */; };
+		46D1D6862B0D3DDA00E7B31D /* FadeInAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D1D6852B0D3DDA00E7B31D /* FadeInAnimator.swift */; };
+		46D1D6882B0D5D6100E7B31D /* SlideInFromLeftAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D1D6872B0D5D6100E7B31D /* SlideInFromLeftAnimator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +52,9 @@
 		46B1D5212B08B8030091E1A9 /* TimedWorkUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimedWorkUITests.swift; sourceTree = "<group>"; };
 		46B1D5232B08B8030091E1A9 /* TimedWorkUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimedWorkUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		46D1D67D2B0A630B00E7B31D /* PreSetupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreSetupViewController.swift; sourceTree = "<group>"; };
+		46D1D6822B0C7FD700E7B31D /* SetupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupViewController.swift; sourceTree = "<group>"; };
+		46D1D6852B0D3DDA00E7B31D /* FadeInAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FadeInAnimator.swift; sourceTree = "<group>"; };
+		46D1D6872B0D5D6100E7B31D /* SlideInFromLeftAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideInFromLeftAnimator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +105,7 @@
 		46B1D5012B08B8010091E1A9 /* TimedWork */ = {
 			isa = PBXGroup;
 			children = (
+				46D1D6812B0AA33000E7B31D /* Extensions */,
 				46D1D67C2B0A61E000E7B31D /* Support */,
 				46B1D5322B08C5E70091E1A9 /* UI */,
 				46B1D5312B08C5D70091E1A9 /* View Controllers */,
@@ -139,6 +146,7 @@
 			children = (
 				46B1D5042B08B8010091E1A9 /* HomeViewController.swift */,
 				46D1D67D2B0A630B00E7B31D /* PreSetupViewController.swift */,
+				46D1D6822B0C7FD700E7B31D /* SetupViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -154,9 +162,26 @@
 		46D1D67C2B0A61E000E7B31D /* Support */ = {
 			isa = PBXGroup;
 			children = (
+				46D1D6842B0D3DB500E7B31D /* Animators */,
 				46B1D5022B08B8010091E1A9 /* AppDelegate.swift */,
 			);
 			path = Support;
+			sourceTree = "<group>";
+		};
+		46D1D6812B0AA33000E7B31D /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		46D1D6842B0D3DB500E7B31D /* Animators */ = {
+			isa = PBXGroup;
+			children = (
+				46D1D6852B0D3DDA00E7B31D /* FadeInAnimator.swift */,
+				46D1D6872B0D5D6100E7B31D /* SlideInFromLeftAnimator.swift */,
+			);
+			path = Animators;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -290,9 +315,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				46B1D5052B08B8010091E1A9 /* HomeViewController.swift in Sources */,
+				46D1D6862B0D3DDA00E7B31D /* FadeInAnimator.swift in Sources */,
 				46B1D5032B08B8010091E1A9 /* AppDelegate.swift in Sources */,
 				46D1D67E2B0A630B00E7B31D /* PreSetupViewController.swift in Sources */,
+				46D1D6882B0D5D6100E7B31D /* SlideInFromLeftAnimator.swift in Sources */,
 				46B1D5082B08B8010091E1A9 /* TimedWork.xcdatamodeld in Sources */,
+				46D1D6832B0C7FD700E7B31D /* SetupViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
