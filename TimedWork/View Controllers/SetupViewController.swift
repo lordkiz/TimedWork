@@ -7,7 +7,7 @@
 
 import Cocoa
 
-class SetupViewController: NSViewController {
+class SetupViewController: NSSplitViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()

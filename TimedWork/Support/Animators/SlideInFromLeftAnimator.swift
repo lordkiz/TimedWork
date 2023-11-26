@@ -11,11 +11,27 @@ private class BackgroundView: NSView {
     override init(frame frameRect: NSRect) {
         super.init(frame: frameRect)
         wantsLayer = true
-        layer?.backgroundColor = NSColor(red: 0, green: 0, blue: 0, alpha: 0.5).cgColor
+        let appearance = NSAppearance.currentDrawing().name
+        if (appearance == .aqua) {
+            layer?.backgroundColor = NSColor(white: 150, alpha: 1).cgColor
+        } else {
+            layer?.backgroundColor = NSColor(red: 0, green: 0, blue: 0, alpha: 1).cgColor
+        }
+        NSApplication.shared.addObserver(self, forKeyPath: "effectiveAppearance",options: .new, context: nil)
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+        if keyPath == "effectiveAppearance", let appearance = change?[.newKey] {
+            if ((appearance as! NSAppearance).name == .aqua) {
+                layer?.backgroundColor = NSColor(white: 150, alpha: 1).cgColor
+            } else {
+                layer?.backgroundColor = NSColor(red: 0, green: 0, blue: 0, alpha: 1).cgColor
+            }
+        }
     }
     
     fileprivate override func mouseDown(with event: NSEvent) {

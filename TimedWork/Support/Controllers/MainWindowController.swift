@@ -19,7 +19,6 @@ class MainWindowController: NSWindowController, NSToolbarDelegate {
     
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
         if keyPath == "count", let count = change?[.newKey] {
-            let theToolbar = NSToolbar(identifier: NSToolbar.Identifier.mainWindowToolbarIdentifier)
             if ((count as! Int) > 0) {
                 _toolbar.insertItem(withItemIdentifier: NSToolbarItem.Identifier.backButtonToolbarIdentifier, at: 0)
             } else {

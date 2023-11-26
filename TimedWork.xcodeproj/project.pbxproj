@@ -22,8 +22,11 @@
 		46D1D6912B0E983E00E7B31D /* NavigationState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D1D6902B0E983E00E7B31D /* NavigationState.swift */; };
 		46D1D6932B0EA2CC00E7B31D /* NSViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D1D6922B0EA2CC00E7B31D /* NSViewController+Extensions.swift */; };
 		46D1D6972B0EA75500E7B31D /* MainWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D1D6962B0EA75500E7B31D /* MainWindowController.swift */; };
-		46D1D69A2B0EA90300E7B31D /* ToolbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D1D6992B0EA90300E7B31D /* ToolbarController.swift */; };
 		46D1D69C2B0EB3D200E7B31D /* NSToolbar+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D1D69B2B0EB3D200E7B31D /* NSToolbar+Extensions.swift */; };
+		46D1D69E2B1249D700E7B31D /* SetupRightTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D1D69D2B1249D700E7B31D /* SetupRightTableViewController.swift */; };
+		46D1D6A02B12643600E7B31D /* SetupData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D1D69F2B12643600E7B31D /* SetupData.swift */; };
+		46D1D6A62B12887B00E7B31D /* SetupItemTableCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D1D6A52B12887B00E7B31D /* SetupItemTableCellView.swift */; };
+		46D1D6AA2B129EA900E7B31D /* SetupItemTableCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 46D1D6A92B129EA900E7B31D /* SetupItemTableCellView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,8 +66,11 @@
 		46D1D6902B0E983E00E7B31D /* NavigationState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationState.swift; sourceTree = "<group>"; };
 		46D1D6922B0EA2CC00E7B31D /* NSViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSViewController+Extensions.swift"; sourceTree = "<group>"; };
 		46D1D6962B0EA75500E7B31D /* MainWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWindowController.swift; sourceTree = "<group>"; };
-		46D1D6992B0EA90300E7B31D /* ToolbarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarController.swift; sourceTree = "<group>"; };
 		46D1D69B2B0EB3D200E7B31D /* NSToolbar+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSToolbar+Extensions.swift"; sourceTree = "<group>"; };
+		46D1D69D2B1249D700E7B31D /* SetupRightTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupRightTableViewController.swift; sourceTree = "<group>"; };
+		46D1D69F2B12643600E7B31D /* SetupData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupData.swift; sourceTree = "<group>"; };
+		46D1D6A52B12887B00E7B31D /* SetupItemTableCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupItemTableCellView.swift; sourceTree = "<group>"; };
+		46D1D6A92B129EA900E7B31D /* SetupItemTableCellView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SetupItemTableCellView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +155,7 @@
 			isa = PBXGroup;
 			children = (
 				46D1D6902B0E983E00E7B31D /* NavigationState.swift */,
+				46D1D69F2B12643600E7B31D /* SetupData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -159,6 +166,7 @@
 				46B1D5042B08B8010091E1A9 /* HomeViewController.swift */,
 				46D1D67D2B0A630B00E7B31D /* PreSetupViewController.swift */,
 				46D1D6822B0C7FD700E7B31D /* SetupViewController.swift */,
+				46D1D69D2B1249D700E7B31D /* SetupRightTableViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -167,6 +175,8 @@
 			isa = PBXGroup;
 			children = (
 				46B1D50B2B08B8020091E1A9 /* Main.storyboard */,
+				46D1D6A52B12887B00E7B31D /* SetupItemTableCellView.swift */,
+				46D1D6A92B129EA900E7B31D /* SetupItemTableCellView.xib */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -210,7 +220,6 @@
 			isa = PBXGroup;
 			children = (
 				46D1D6962B0EA75500E7B31D /* MainWindowController.swift */,
-				46D1D6992B0EA90300E7B31D /* ToolbarController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -319,6 +328,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				46D1D6AA2B129EA900E7B31D /* SetupItemTableCellView.xib in Resources */,
 				46B1D50A2B08B8020091E1A9 /* Assets.xcassets in Resources */,
 				46B1D50D2B08B8020091E1A9 /* Main.storyboard in Resources */,
 			);
@@ -348,14 +358,16 @@
 				46D1D6912B0E983E00E7B31D /* NavigationState.swift in Sources */,
 				46B1D5052B08B8010091E1A9 /* HomeViewController.swift in Sources */,
 				46D1D6862B0D3DDA00E7B31D /* FadeInAnimator.swift in Sources */,
-				46D1D69A2B0EA90300E7B31D /* ToolbarController.swift in Sources */,
 				46D1D6932B0EA2CC00E7B31D /* NSViewController+Extensions.swift in Sources */,
 				46B1D5032B08B8010091E1A9 /* AppDelegate.swift in Sources */,
 				46D1D67E2B0A630B00E7B31D /* PreSetupViewController.swift in Sources */,
+				46D1D6A62B12887B00E7B31D /* SetupItemTableCellView.swift in Sources */,
 				46D1D6882B0D5D6100E7B31D /* SlideInFromLeftAnimator.swift in Sources */,
 				46D1D69C2B0EB3D200E7B31D /* NSToolbar+Extensions.swift in Sources */,
 				46D1D6972B0EA75500E7B31D /* MainWindowController.swift in Sources */,
+				46D1D6A02B12643600E7B31D /* SetupData.swift in Sources */,
 				46B1D5082B08B8010091E1A9 /* TimedWork.xcdatamodeld in Sources */,
+				46D1D69E2B1249D700E7B31D /* SetupRightTableViewController.swift in Sources */,
 				46D1D6832B0C7FD700E7B31D /* SetupViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
