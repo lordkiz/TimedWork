@@ -105,9 +105,11 @@ class SetupItemTableCellView : NSTableCellView {
             let appsView = NSStackView(frame: NSMakeRect(0, 0, CGFloat(data.images.count * 15), 20))
             appsView.orientation = .horizontal
             data.images.enumerated().forEach({ index, image in
-                let imgView = NSImageView(frame: NSMakeRect(0, 0, 10, 10))
-                imgView.image = resize(image: image, w: 12, h: 12)
-                appsView.addView(imgView, in: .top)
+                if ((image) != nil) {
+                    let imgView = NSImageView(frame: NSMakeRect(0, 0, 10, 10))
+                    imgView.image = resize(image: image!, w: 12, h: 12)
+                    appsView.addView(imgView, in: .top)
+                }
             })
             addSubview(appsView)
             appsView.translatesAutoresizingMaskIntoConstraints = false
