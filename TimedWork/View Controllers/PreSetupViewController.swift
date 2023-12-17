@@ -57,13 +57,13 @@ class PreSetupViewController: NSViewController {
     }
     
     
-    
-    
-    @IBAction func onGetStartedButtonPressed(_ sender: NSButton) {
+    @IBAction func onButtonPressed(_ sender: NSButton) {
+        print(sender.title)
         guard let vc = storyboard?.instantiateController(withIdentifier: "SetupViewController") as? SetupViewController
         else {
             return
         }
         pushIntoView(presentingVC: self, presentedVC: vc, animator: SlideInFromLeftAnimator())
     }
+        
 }

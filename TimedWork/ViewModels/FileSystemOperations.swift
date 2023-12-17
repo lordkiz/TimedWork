@@ -7,12 +7,6 @@
 
 import Cocoa
 
-struct InstalledApp {
-    var appUrl: URL
-    var appIcon: NSImage?
-    var appName: String
-}
-
 class FileSystemOperations: NSObject {
     static let shared = FileSystemOperations()
     

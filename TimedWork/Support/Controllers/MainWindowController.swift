@@ -7,13 +7,14 @@
 
 import Cocoa
 
-class MainWindowController: NSWindowController, NSToolbarDelegate {
+class MainWindowController: NSWindowController {
     
     var _toolbar: NSToolbar!
     
     override func windowDidLoad() {
         super.windowDidLoad()
         configureToolbar()
+        setUpContent()
         NavigationState.shared.addObserver(self, forKeyPath: "count", options: .new, context: nil)
     }
     
@@ -27,6 +28,10 @@ class MainWindowController: NSWindowController, NSToolbarDelegate {
             
         }
     }
+}
+
+
+extension MainWindowController: NSToolbarDelegate {
     
     private func configureToolbar() {
         if let theWindow = self.window {
@@ -92,5 +97,31 @@ class MainWindowController: NSWindowController, NSToolbarDelegate {
     func toolbarDidRemoveItem(_ notification: Notification) {
         print("toolbarDidRemoveItem", (notification.userInfo?["item"] as? NSToolbarItem)?.itemIdentifier ?? "")
     }
+}
+
+
+extension MainWindowController {
+    fileprivate func loadPreSetupViewController() {
+        guard let vc = storyboard?.instantiateController(withIdentifier: "PreSetupViewController") as? PreSetupViewController
+        else {
+            return
+        }
+        contentViewController = vc
+    }
     
+    fileprivate func loadMainAppViewController() {
+        guard let vc = storyboard?.instantiateController(withIdentifier: "MainAppViewController") as? MainAppViewController
+        else {
+            return
+        }
+        contentViewController = vc
+    }
+    
+    fileprivate func setUpContent() {
+        if (!ActivityManager.shared.activities.isEmpty) {
+            loadPreSetupViewController()
+        } else {
+            loadMainAppViewController()
+        }
+    }
 }

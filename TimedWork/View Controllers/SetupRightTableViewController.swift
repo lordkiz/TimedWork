@@ -65,7 +65,7 @@ class SetupRightViewController: NSViewController, NSTableViewDelegate, NSTableVi
 
     
     func numberOfRows(in tableView: NSTableView) -> Int {
-        return 2
+        return SetupItemData.data.count
     }
     
 }

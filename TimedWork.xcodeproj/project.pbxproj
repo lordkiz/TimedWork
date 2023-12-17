@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		469612242B25FEF4003EC4F4 /* SidebarListLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469612232B25FEF4003EC4F4 /* SidebarListLayout.swift */; };
+		46A1F5142B24AE13000D33D4 /* SidebarCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A1F5132B24AE13000D33D4 /* SidebarCollectionView.swift */; };
 		46B1D5032B08B8010091E1A9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B1D5022B08B8010091E1A9 /* AppDelegate.swift */; };
-		46B1D5052B08B8010091E1A9 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B1D5042B08B8010091E1A9 /* HomeViewController.swift */; };
+		46B1D5052B08B8010091E1A9 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B1D5042B08B8010091E1A9 /* SplashViewController.swift */; };
 		46B1D5082B08B8010091E1A9 /* TimedWork.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 46B1D5062B08B8010091E1A9 /* TimedWork.xcdatamodeld */; };
 		46B1D50A2B08B8020091E1A9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46B1D5092B08B8020091E1A9 /* Assets.xcassets */; };
 		46B1D50D2B08B8020091E1A9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46B1D50B2B08B8020091E1A9 /* Main.storyboard */; };
@@ -28,6 +30,17 @@
 		46D1D6A62B12887B00E7B31D /* SetupItemTableCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D1D6A52B12887B00E7B31D /* SetupItemTableCellView.swift */; };
 		46D1D6AA2B129EA900E7B31D /* SetupItemTableCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 46D1D6A92B129EA900E7B31D /* SetupItemTableCellView.xib */; };
 		46D1D6AD2B137DA000E7B31D /* FileSystemOperations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D1D6AC2B137DA000E7B31D /* FileSystemOperations.swift */; };
+		46D1D6AF2B15C47400E7B31D /* InstalledApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D1D6AE2B15C47400E7B31D /* InstalledApp.swift */; };
+		46F8FC202B1CE4E1003153BE /* ActivityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F8FC1F2B1CE4E1003153BE /* ActivityManager.swift */; };
+		46F8FC282B1DB2C7003153BE /* NSImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F8FC272B1DB2C7003153BE /* NSImage+Extensions.swift */; };
+		46F8FC332B244341003153BE /* SidebarCollectionViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F8FC312B244341003153BE /* SidebarCollectionViewItem.swift */; };
+		46F8FC342B244341003153BE /* SidebarCollectionViewItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 46F8FC322B244341003153BE /* SidebarCollectionViewItem.xib */; };
+		46F8FC362B244751003153BE /* Sidebar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F8FC352B244751003153BE /* Sidebar.swift */; };
+		46F8FC392B24566F003153BE /* SidebarHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F8FC372B24566F003153BE /* SidebarHeaderView.swift */; };
+		46F8FC3A2B24566F003153BE /* SidebarHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 46F8FC382B24566F003153BE /* SidebarHeaderView.xib */; };
+		46F8FC3C2B246CBD003153BE /* MainAppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F8FC3B2B246CBD003153BE /* MainAppViewController.swift */; };
+		46F8FC3E2B246E9E003153BE /* MainAppMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F8FC3D2B246E9E003153BE /* MainAppMenuViewController.swift */; };
+		46F8FC402B246EBB003153BE /* MainAppContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F8FC3F2B246EBB003153BE /* MainAppContentViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,9 +61,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		469612232B25FEF4003EC4F4 /* SidebarListLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarListLayout.swift; sourceTree = "<group>"; };
+		46A1F5132B24AE13000D33D4 /* SidebarCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarCollectionView.swift; sourceTree = "<group>"; };
 		46B1D4FF2B08B8010091E1A9 /* TimedWork.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TimedWork.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		46B1D5022B08B8010091E1A9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		46B1D5042B08B8010091E1A9 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		46B1D5042B08B8010091E1A9 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		46B1D5072B08B8010091E1A9 /* TimedWork.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TimedWork.xcdatamodel; sourceTree = "<group>"; };
 		46B1D5092B08B8020091E1A9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		46B1D50C2B08B8020091E1A9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -73,6 +88,17 @@
 		46D1D6A52B12887B00E7B31D /* SetupItemTableCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupItemTableCellView.swift; sourceTree = "<group>"; };
 		46D1D6A92B129EA900E7B31D /* SetupItemTableCellView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SetupItemTableCellView.xib; sourceTree = "<group>"; };
 		46D1D6AC2B137DA000E7B31D /* FileSystemOperations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileSystemOperations.swift; sourceTree = "<group>"; };
+		46D1D6AE2B15C47400E7B31D /* InstalledApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstalledApp.swift; sourceTree = "<group>"; };
+		46F8FC1F2B1CE4E1003153BE /* ActivityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityManager.swift; sourceTree = "<group>"; };
+		46F8FC272B1DB2C7003153BE /* NSImage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSImage+Extensions.swift"; sourceTree = "<group>"; };
+		46F8FC312B244341003153BE /* SidebarCollectionViewItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarCollectionViewItem.swift; sourceTree = "<group>"; };
+		46F8FC322B244341003153BE /* SidebarCollectionViewItem.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SidebarCollectionViewItem.xib; sourceTree = "<group>"; };
+		46F8FC352B244751003153BE /* Sidebar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sidebar.swift; sourceTree = "<group>"; };
+		46F8FC372B24566F003153BE /* SidebarHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarHeaderView.swift; sourceTree = "<group>"; };
+		46F8FC382B24566F003153BE /* SidebarHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SidebarHeaderView.xib; sourceTree = "<group>"; };
+		46F8FC3B2B246CBD003153BE /* MainAppViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainAppViewController.swift; sourceTree = "<group>"; };
+		46F8FC3D2B246E9E003153BE /* MainAppMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainAppMenuViewController.swift; sourceTree = "<group>"; };
+		46F8FC3F2B246EBB003153BE /* MainAppContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainAppContentViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +126,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		469612222B25FEA8003EC4F4 /* Layouts */ = {
+			isa = PBXGroup;
+			children = (
+				469612232B25FEF4003EC4F4 /* SidebarListLayout.swift */,
+			);
+			path = Layouts;
+			sourceTree = "<group>";
+		};
 		46B1D4F62B08B8000091E1A9 = {
 			isa = PBXGroup;
 			children = (
@@ -159,6 +193,8 @@
 			children = (
 				46D1D6902B0E983E00E7B31D /* NavigationState.swift */,
 				46D1D69F2B12643600E7B31D /* SetupData.swift */,
+				46D1D6AE2B15C47400E7B31D /* InstalledApp.swift */,
+				46F8FC352B244751003153BE /* Sidebar.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -166,10 +202,13 @@
 		46B1D5312B08C5D70091E1A9 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				46B1D5042B08B8010091E1A9 /* HomeViewController.swift */,
+				46B1D5042B08B8010091E1A9 /* SplashViewController.swift */,
 				46D1D67D2B0A630B00E7B31D /* PreSetupViewController.swift */,
 				46D1D6822B0C7FD700E7B31D /* SetupViewController.swift */,
 				46D1D69D2B1249D700E7B31D /* SetupRightTableViewController.swift */,
+				46F8FC3B2B246CBD003153BE /* MainAppViewController.swift */,
+				46F8FC3D2B246E9E003153BE /* MainAppMenuViewController.swift */,
+				46F8FC3F2B246EBB003153BE /* MainAppContentViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -180,6 +219,11 @@
 				46B1D50B2B08B8020091E1A9 /* Main.storyboard */,
 				46D1D6A52B12887B00E7B31D /* SetupItemTableCellView.swift */,
 				46D1D6A92B129EA900E7B31D /* SetupItemTableCellView.xib */,
+				46F8FC312B244341003153BE /* SidebarCollectionViewItem.swift */,
+				46F8FC322B244341003153BE /* SidebarCollectionViewItem.xib */,
+				46F8FC372B24566F003153BE /* SidebarHeaderView.swift */,
+				46F8FC382B24566F003153BE /* SidebarHeaderView.xib */,
+				46A1F5132B24AE13000D33D4 /* SidebarCollectionView.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -187,6 +231,7 @@
 		46D1D67C2B0A61E000E7B31D /* Support */ = {
 			isa = PBXGroup;
 			children = (
+				469612222B25FEA8003EC4F4 /* Layouts */,
 				46D1D6982B0EA8CD00E7B31D /* Controllers */,
 				46D1D6842B0D3DB500E7B31D /* Animators */,
 				46B1D5022B08B8010091E1A9 /* AppDelegate.swift */,
@@ -199,6 +244,7 @@
 			children = (
 				46D1D6922B0EA2CC00E7B31D /* NSViewController+Extensions.swift */,
 				46D1D69B2B0EB3D200E7B31D /* NSToolbar+Extensions.swift */,
+				46F8FC272B1DB2C7003153BE /* NSImage+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -231,6 +277,7 @@
 			isa = PBXGroup;
 			children = (
 				46D1D6AC2B137DA000E7B31D /* FileSystemOperations.swift */,
+				46F8FC1F2B1CE4E1003153BE /* ActivityManager.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -339,8 +386,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				46F8FC3A2B24566F003153BE /* SidebarHeaderView.xib in Resources */,
 				46D1D6AA2B129EA900E7B31D /* SetupItemTableCellView.xib in Resources */,
 				46B1D50A2B08B8020091E1A9 /* Assets.xcassets in Resources */,
+				46F8FC342B244341003153BE /* SidebarCollectionViewItem.xib in Resources */,
 				46B1D50D2B08B8020091E1A9 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -367,20 +416,31 @@
 			buildActionMask = 2147483647;
 			files = (
 				46D1D6912B0E983E00E7B31D /* NavigationState.swift in Sources */,
-				46B1D5052B08B8010091E1A9 /* HomeViewController.swift in Sources */,
+				46F8FC402B246EBB003153BE /* MainAppContentViewController.swift in Sources */,
+				46B1D5052B08B8010091E1A9 /* SplashViewController.swift in Sources */,
 				46D1D6862B0D3DDA00E7B31D /* FadeInAnimator.swift in Sources */,
 				46D1D6932B0EA2CC00E7B31D /* NSViewController+Extensions.swift in Sources */,
 				46B1D5032B08B8010091E1A9 /* AppDelegate.swift in Sources */,
+				46F8FC392B24566F003153BE /* SidebarHeaderView.swift in Sources */,
 				46D1D67E2B0A630B00E7B31D /* PreSetupViewController.swift in Sources */,
 				46D1D6A62B12887B00E7B31D /* SetupItemTableCellView.swift in Sources */,
 				46D1D6882B0D5D6100E7B31D /* SlideInFromLeftAnimator.swift in Sources */,
 				46D1D69C2B0EB3D200E7B31D /* NSToolbar+Extensions.swift in Sources */,
+				469612242B25FEF4003EC4F4 /* SidebarListLayout.swift in Sources */,
 				46D1D6972B0EA75500E7B31D /* MainWindowController.swift in Sources */,
+				46F8FC3E2B246E9E003153BE /* MainAppMenuViewController.swift in Sources */,
 				46D1D6A02B12643600E7B31D /* SetupData.swift in Sources */,
+				46F8FC362B244751003153BE /* Sidebar.swift in Sources */,
 				46B1D5082B08B8010091E1A9 /* TimedWork.xcdatamodeld in Sources */,
+				46F8FC202B1CE4E1003153BE /* ActivityManager.swift in Sources */,
 				46D1D6AD2B137DA000E7B31D /* FileSystemOperations.swift in Sources */,
+				46F8FC332B244341003153BE /* SidebarCollectionViewItem.swift in Sources */,
+				46F8FC282B1DB2C7003153BE /* NSImage+Extensions.swift in Sources */,
 				46D1D69E2B1249D700E7B31D /* SetupRightTableViewController.swift in Sources */,
+				46A1F5142B24AE13000D33D4 /* SidebarCollectionView.swift in Sources */,
+				46D1D6AF2B15C47400E7B31D /* InstalledApp.swift in Sources */,
 				46D1D6832B0C7FD700E7B31D /* SetupViewController.swift in Sources */,
+				46F8FC3C2B246CBD003153BE /* MainAppViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
