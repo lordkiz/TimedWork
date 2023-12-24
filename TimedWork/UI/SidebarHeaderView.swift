@@ -13,8 +13,17 @@ class SidebarHeaderView: NSView {
     
     @IBOutlet var chevronImageView: NSImageView!
     
+    private var mouseOverArea: NSTrackingArea!
+    
     override func draw(_ dirtyRect: NSRect) {
         super.draw(dirtyRect)
+        NSColor(named: "HoverColor")?.set()
+        if hovering {
+            let path = NSBezierPath(rect: bounds)
+            path.fill()
+            
+        }
+        
         titleText.translatesAutoresizingMaskIntoConstraints = false
         chevronImageView.translatesAutoresizingMaskIntoConstraints = false
         titleText.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 5).isActive = true
@@ -24,6 +33,36 @@ class SidebarHeaderView: NSView {
         chevronImageView.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
     }
     
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        mouseOverArea = NSTrackingArea(rect: bounds, options: [.activeAlways, .mouseEnteredAndExited], owner: self)
+        addTrackingArea(mouseOverArea)
+    }
+    
+    override func mouseEntered(with event: NSEvent) {
+        super.mouseEntered(with: event)
+        if !hovering {
+            hovering = true
+        }
+    }
+    
+    override func mouseExited(with event: NSEvent) {
+        super.mouseExited(with: event)
+        if hovering {
+            hovering = false
+        }
+    }
+    
+    deinit {
+        removeTrackingArea(mouseOverArea)
+    }
+    
+    private var hovering: Bool = false {
+        didSet {
+            setNeedsDisplay(bounds)
+        }
+    }
 }
 
 extension SidebarHeaderView {

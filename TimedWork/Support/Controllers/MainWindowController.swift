@@ -15,23 +15,21 @@ class MainWindowController: NSWindowController {
         super.windowDidLoad()
         configureToolbar()
         setUpContent()
-        NavigationState.shared.addObserver(self, forKeyPath: "count", options: .new, context: nil)
-    }
-    
-    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
-        if keyPath == "count", let count = change?[.newKey] {
-            if ((count as! Int) > 0) {
-                _toolbar.insertItem(withItemIdentifier: NSToolbarItem.Identifier.backButtonToolbarIdentifier, at: 0)
-            } else {
-                _toolbar.removeItem(at: 0)
-            }
-            
-        }
+        Navigator.shared.toolbarBackButtonDelegate = self
     }
 }
 
 
-extension MainWindowController: NSToolbarDelegate {
+extension MainWindowController: NSToolbarDelegate, ToolbarBackButtonDelegate {
+    func shouldDisplayBackButton(_ should: Bool) {
+        print(should)
+        if (should) {
+            _toolbar.insertItem(withItemIdentifier: NSToolbarItem.Identifier.backButtonToolbarIdentifier, at: 0)
+        } else {
+            _toolbar.removeItem(at: 0)
+        }
+    }
+    
     
     private func configureToolbar() {
         if let theWindow = self.window {
@@ -48,39 +46,33 @@ extension MainWindowController: NSToolbarDelegate {
     }
     
     @IBAction func handleBackButtonPress(_ sender: Any) {
-        if (NavigationState.shared.count < 1) {
-            return
-        }
-        if let vc = NavigationState.shared.pop() {
-            vc.leaveView()
-        }
+        Navigator.shared.pop()
     }
     
     func toolbar(_ toolbar: NSToolbar, itemForItemIdentifier itemIdentifier: NSToolbarItem.Identifier, willBeInsertedIntoToolbar flag: Bool) -> NSToolbarItem? {
         if (itemIdentifier == NSToolbarItem.Identifier.backButtonToolbarIdentifier) {
-            if NavigationState.shared.count < 1 {
-                return nil
-            }
+            
             let backButton = NSToolbarItem(itemIdentifier: itemIdentifier)
             backButton.image = NSImage(systemSymbolName: "chevron.backward", accessibilityDescription: "")
             backButton.action = #selector(handleBackButtonPress(_:))
             return backButton
         } else if (itemIdentifier == NSToolbarItem.Identifier.spaceToolbarIdentifier) {
             let space = NSToolbarItem(itemIdentifier: itemIdentifier)
-            
+            return space
         }
         return nil
     }
     
     func toolbarDefaultItemIdentifiers(_ toolbar: NSToolbar) -> [NSToolbarItem.Identifier] {
         return [
-            NSToolbarItem.Identifier.backButtonToolbarIdentifier
+//            NSToolbarItem.Identifier.backButtonToolbarIdentifier
         ]
     }
 
     func toolbarAllowedItemIdentifiers(_ toolbar: NSToolbar) -> [NSToolbarItem.Identifier] {
         return [
-            NSToolbarItem.Identifier.backButtonToolbarIdentifier
+            NSToolbarItem.Identifier.backButtonToolbarIdentifier,
+            NSToolbarItem.Identifier.spaceToolbarIdentifier
         ]
     }
 
@@ -118,10 +110,14 @@ extension MainWindowController {
     }
     
     fileprivate func setUpContent() {
-        if (!ActivityManager.shared.activities.isEmpty) {
+        if (ActivityManager.shared.activities.isEmpty) {
             loadPreSetupViewController()
         } else {
             loadMainAppViewController()
         }
+    }
+    
+    func refresh() {
+        setUpContent()
     }
 }

@@ -17,6 +17,10 @@ class SetupItemTableCellView : NSTableCellView {
     
     @IBOutlet var descriptionText: NSTextField!
     
+    var row: Int! = -1
+    
+    var tableCellClickDelegate: TableCellClickDelegate!
+    
     private var mouseOverArea: NSTrackingArea!
     
     override init(frame frameRect: NSRect) {
@@ -57,6 +61,11 @@ class SetupItemTableCellView : NSTableCellView {
         if highlight {
             highlight = false
         }
+    }
+    
+    override func mouseDown(with event: NSEvent) {
+        super.mouseDown(with: event)
+        tableCellClickDelegate.onClick(row: row)
     }
     
     deinit {

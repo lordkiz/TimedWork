@@ -12,12 +12,13 @@ enum SidebarItemType: Int {
 }
 
 enum SidebarSection: Int, CustomStringConvertible {
-    case main, work, company
+    case main, activity, meeting, company
     var description: String {
         switch self {
-        case .company: return "Company"
-        case .main: return "Main"
-        case .work: return "Work"
+        case .company: return "Timed.Work"
+        case .main: return "Overview"
+        case .activity: return "My Activities"
+        case .meeting: return "My Meetings"
         }
     }
 }
@@ -36,6 +37,9 @@ struct SidebarItem: Hashable, Identifiable {
     static func row(title: String, image: NSImage?, id: UUID = UUID()) -> Self {
         return SidebarItem(id: id, type: .row, title: title, image: image)
     }
+    static func rowWithoutImage(title: String, id: UUID = UUID()) -> Self {
+        return SidebarItem(id: id, type: .row, title: title, image: nil)
+    }
 }
 
 struct RowIdentifier {
@@ -46,28 +50,31 @@ struct RowIdentifier {
 
 
 class Sidebar: NSObject {
-    static var sections: Dictionary<SidebarSection, [SidebarItem]> = [
-        SidebarSection.main: [
-            SidebarItem.row(title: "Dashboard", image: NSImage(systemSymbolName: "speedometer", accessibilityDescription: nil)),
-            SidebarItem.row(title: "Work", image: NSImage(systemSymbolName: "laptopcomputer", accessibilityDescription: nil)),
-            SidebarItem.row(title: "Meeting", image: NSImage(systemSymbolName: "video.circle", accessibilityDescription: nil))
-        ],
-        SidebarSection.work: [
-            SidebarItem.row(title: "workDashboard", image: NSImage(systemSymbolName: "speedometer", accessibilityDescription: nil)),
-            SidebarItem.row(title: "workWork", image: NSImage(systemSymbolName: "laptopcomputer", accessibilityDescription: nil)),
-            SidebarItem.row(title: "workMeeting", image: NSImage(systemSymbolName: "video.circle", accessibilityDescription: nil)),
-            SidebarItem.row(title: "work2Dashboard", image: NSImage(systemSymbolName: "speedometer", accessibilityDescription: nil)),
-            SidebarItem.row(title: "work2Work", image: NSImage(systemSymbolName: "laptopcomputer", accessibilityDescription: nil)),
-            SidebarItem.row(title: "work2Meeting", image: NSImage(systemSymbolName: "video.circle", accessibilityDescription: nil))
-        ],
-        SidebarSection.company: [
-            SidebarItem.row(title: "compDashboard", image: NSImage(systemSymbolName: "speedometer", accessibilityDescription: nil)),
-            SidebarItem.row(title: "compWork", image: NSImage(systemSymbolName: "laptopcomputer", accessibilityDescription: nil)),
-            SidebarItem.row(title: "compMeeting", image: NSImage(systemSymbolName: "video.circle", accessibilityDescription: nil)),
-            SidebarItem.row(title: "comp2Dashboard", image: NSImage(systemSymbolName: "speedometer", accessibilityDescription: nil)),
-            SidebarItem.row(title: "comp2Work", image: NSImage(systemSymbolName: "laptopcomputer", accessibilityDescription: nil)),
-            SidebarItem.row(title: "comp2Meeting", image: NSImage(systemSymbolName: "video.circle", accessibilityDescription: nil))
-            
-        ],
-    ]
+    func computeSections() -> Dictionary<SidebarSection, [SidebarItem]> {
+        var result: Dictionary<SidebarSection, [SidebarItem]> = [
+            SidebarSection.main: [
+                SidebarItem.row(title: "Dashboard", image: NSImage(systemSymbolName: "speedometer", accessibilityDescription: nil)),
+                SidebarItem.row(title: "Activities", image: NSImage(systemSymbolName: "laptopcomputer", accessibilityDescription: nil)),
+                SidebarItem.row(title: "Meetings", image: NSImage(systemSymbolName: "video.circle", accessibilityDescription: nil))
+            ],
+            SidebarSection.company: [
+                SidebarItem.rowWithoutImage(title: "About"),
+                SidebarItem.rowWithoutImage(title: "Terms & Conditions"),
+                SidebarItem.rowWithoutImage(title: "Privacy"),
+            ]
+        ]
+        // Activities
+        let myActivities = ActivityManager.shared.activities
+        if myActivities.isEmpty {
+            result[SidebarSection.activity] = [SidebarItem.rowWithoutImage(title: "No activities")]
+        } else {
+            result[SidebarSection.activity] = myActivities.map { (activity) in
+                return SidebarItem.row(title: activity.name!, image: NSImage(systemSymbolName: "laptopcomputer", accessibilityDescription: nil))
+            }
+        }
+        
+        // Meetings
+        result[SidebarSection.meeting] = [SidebarItem.rowWithoutImage(title:"No meetings")]
+        return result
+    }
 }

@@ -688,9 +688,8 @@
                 <windowController showSeguePresentationStyle="single" id="B8D-0N-5wS" customClass="MainWindowController" customModule="TimedWork" customModuleProvider="target" sceneMemberID="viewController">
                     <window key="window" title="Window" separatorStyle="none" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" titlebarAppearsTransparent="YES" titleVisibility="hidden" id="IQv-IB-iLA">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES" fullSizeContentView="YES"/>
-                        <rect key="contentRect" x="196" y="240" width="1200" height="600"/>
+                        <rect key="contentRect" x="196" y="240" width="400" height="600"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
-                        <value key="minSize" type="size" width="1200" height="600"/>
                         <connections>
                             <outlet property="delegate" destination="B8D-0N-5wS" id="98r-iN-zZc"/>
                         </connections>
@@ -705,11 +704,11 @@
             <objects>
                 <viewController storyboardIdentifier="PreSetupViewController" id="vam-L6-o6j" userLabel="PreSetupViewController" customClass="PreSetupViewController" customModule="TimedWork" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="S8C-4w-YTJ">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="400"/>
+                        <rect key="frame" x="0.0" y="0.0" width="400" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ra7-Ul-llU">
-                                <rect key="frame" x="18" y="94" width="504" height="24"/>
+                                <rect key="frame" x="18" y="294" width="504" height="24"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" controlSize="large" lineBreakMode="clipping" alignment="center" title="No Work Activity Set Up" id="RUd-Mr-Zc7">
                                     <font key="font" metaFont="system" size="16"/>
@@ -718,7 +717,7 @@
                                 </textFieldCell>
                             </textField>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Uza-3X-guI">
-                                <rect key="frame" x="0.0" y="0.0" width="520" height="20"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="20"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
                                 <buttonCell key="cell" type="smallSquare" title="Get Started" bezelStyle="smallSquare" alignment="center" controlSize="large" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="4ME-xI-42a">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -730,7 +729,7 @@
                                 </connections>
                             </button>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jve-zQ-WtF">
-                                <rect key="frame" x="61" y="56" width="479" height="16"/>
+                                <rect key="frame" x="61" y="256" width="479" height="16"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" controlSize="large" lineBreakMode="clipping" alignment="center" title="Configure a work activity to get daily, weekly or monthly reports on the activity" id="BAg-76-cnm">
                                     <font key="font" metaFont="smallSystem"/>
@@ -759,7 +758,7 @@
                         <splitViewItem id="RZK-h7-xbF"/>
                     </splitViewItems>
                     <splitView key="splitView" dividerStyle="thin" vertical="YES" id="EkY-AM-swD">
-                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <rect key="frame" x="0.0" y="0.0" width="400" height="600"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <connections>
                             <outlet property="delegate" destination="nuw-yU-SsJ" id="ha3-g7-0Oa"/>
@@ -810,7 +809,7 @@
                         <splitViewItem id="Qng-bL-eQr"/>
                     </splitViewItems>
                     <splitView key="splitView" dividerStyle="thin" vertical="YES" id="Dmq-64-dhu">
-                        <rect key="frame" x="0.0" y="0.0" width="1200" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="300" height="600"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <connections>
                             <outlet property="delegate" destination="KCN-2g-y89" id="KzT-bd-lze"/>
@@ -889,6 +888,62 @@
                 <customObject id="VdI-sZ-8Up" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="69" y="-433"/>
+        </scene>
+        <!--Create Activity View Controller-->
+        <scene sceneID="WoX-Cn-3Hs">
+            <objects>
+                <viewController storyboardIdentifier="CreateActivityViewController" id="zFN-Yu-hg5" customClass="CreateActivityViewController" customModule="TimedWork" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="6e2-xV-QMK">
+                        <rect key="frame" x="0.0" y="0.0" width="495" height="600"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fOa-IC-3vS">
+                                <rect key="frame" x="52" y="442" width="369" height="16"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Select apps that report this activity" id="0d9-qZ-UCA">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4Ko-Jg-Cgd">
+                                <rect key="frame" x="52" y="527" width="285" height="16"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Enter Name of Activity" id="Tpq-HA-zrM">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="o5e-rU-Une">
+                                <rect key="frame" x="54" y="485" width="365" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" id="O3C-pY-NRU">
+                                    <font key="font" usesAppearanceFont="YES"/>
+                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fvT-R8-6uh">
+                                <rect key="frame" x="47" y="284" width="379" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="push" title="Create" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="05P-UB-i6M">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                            </button>
+                        </subviews>
+                    </view>
+                    <connections>
+                        <outlet property="activityNameTextField" destination="o5e-rU-Une" id="r2n-uP-OJa"/>
+                        <outlet property="createButton" destination="fvT-R8-6uh" id="BdN-W3-38D"/>
+                        <outlet property="enterNameOfActivityLabel" destination="4Ko-Jg-Cgd" id="tUf-8z-h6T"/>
+                        <outlet property="selectAppsLabel" destination="fOa-IC-3vS" id="aOO-7M-Ue2"/>
+                    </connections>
+                </viewController>
+                <customObject id="cZy-Fc-BWE" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-940.5" y="1622"/>
         </scene>
     </scenes>
     <resources>

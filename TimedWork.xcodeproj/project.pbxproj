@@ -21,8 +21,6 @@
 		46D1D6832B0C7FD700E7B31D /* SetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D1D6822B0C7FD700E7B31D /* SetupViewController.swift */; };
 		46D1D6862B0D3DDA00E7B31D /* FadeInAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D1D6852B0D3DDA00E7B31D /* FadeInAnimator.swift */; };
 		46D1D6882B0D5D6100E7B31D /* SlideInFromLeftAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D1D6872B0D5D6100E7B31D /* SlideInFromLeftAnimator.swift */; };
-		46D1D6912B0E983E00E7B31D /* NavigationState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D1D6902B0E983E00E7B31D /* NavigationState.swift */; };
-		46D1D6932B0EA2CC00E7B31D /* NSViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D1D6922B0EA2CC00E7B31D /* NSViewController+Extensions.swift */; };
 		46D1D6972B0EA75500E7B31D /* MainWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D1D6962B0EA75500E7B31D /* MainWindowController.swift */; };
 		46D1D69C2B0EB3D200E7B31D /* NSToolbar+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D1D69B2B0EB3D200E7B31D /* NSToolbar+Extensions.swift */; };
 		46D1D69E2B1249D700E7B31D /* SetupRightTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D1D69D2B1249D700E7B31D /* SetupRightTableViewController.swift */; };
@@ -31,6 +29,14 @@
 		46D1D6AA2B129EA900E7B31D /* SetupItemTableCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 46D1D6A92B129EA900E7B31D /* SetupItemTableCellView.xib */; };
 		46D1D6AD2B137DA000E7B31D /* FileSystemOperations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D1D6AC2B137DA000E7B31D /* FileSystemOperations.swift */; };
 		46D1D6AF2B15C47400E7B31D /* InstalledApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D1D6AE2B15C47400E7B31D /* InstalledApp.swift */; };
+		46DBCEF82B32DAF600323348 /* CreateActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46DBCEF72B32DAF600323348 /* CreateActivityViewController.swift */; };
+		46DBCEFB2B337F0200323348 /* CheckboxImageTextComboCollectionViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46DBCEF92B337F0200323348 /* CheckboxImageTextComboCollectionViewItem.swift */; };
+		46DBCEFC2B337F0200323348 /* CheckboxImageTextComboCollectionViewItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 46DBCEFA2B337F0200323348 /* CheckboxImageTextComboCollectionViewItem.xib */; };
+		46DBCF002B36033000323348 /* ReportManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46DBCEFF2B36033000323348 /* ReportManager.swift */; };
+		46DBCF022B36035700323348 /* ReporterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46DBCF012B36035700323348 /* ReporterManager.swift */; };
+		46DBCF092B36F6B300323348 /* Navigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46DBCF082B36F6B300323348 /* Navigator.swift */; };
+		46DBCF0B2B3709EE00323348 /* TableCellClickDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46DBCF0A2B3709EE00323348 /* TableCellClickDelegate.swift */; };
+		46DBCF0D2B37109700323348 /* ToolbarBackButtonDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46DBCF0C2B37109700323348 /* ToolbarBackButtonDelegate.swift */; };
 		46F8FC202B1CE4E1003153BE /* ActivityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F8FC1F2B1CE4E1003153BE /* ActivityManager.swift */; };
 		46F8FC282B1DB2C7003153BE /* NSImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F8FC272B1DB2C7003153BE /* NSImage+Extensions.swift */; };
 		46F8FC332B244341003153BE /* SidebarCollectionViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F8FC312B244341003153BE /* SidebarCollectionViewItem.swift */; };
@@ -79,8 +85,6 @@
 		46D1D6822B0C7FD700E7B31D /* SetupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupViewController.swift; sourceTree = "<group>"; };
 		46D1D6852B0D3DDA00E7B31D /* FadeInAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FadeInAnimator.swift; sourceTree = "<group>"; };
 		46D1D6872B0D5D6100E7B31D /* SlideInFromLeftAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideInFromLeftAnimator.swift; sourceTree = "<group>"; };
-		46D1D6902B0E983E00E7B31D /* NavigationState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationState.swift; sourceTree = "<group>"; };
-		46D1D6922B0EA2CC00E7B31D /* NSViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSViewController+Extensions.swift"; sourceTree = "<group>"; };
 		46D1D6962B0EA75500E7B31D /* MainWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWindowController.swift; sourceTree = "<group>"; };
 		46D1D69B2B0EB3D200E7B31D /* NSToolbar+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSToolbar+Extensions.swift"; sourceTree = "<group>"; };
 		46D1D69D2B1249D700E7B31D /* SetupRightTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupRightTableViewController.swift; sourceTree = "<group>"; };
@@ -89,6 +93,14 @@
 		46D1D6A92B129EA900E7B31D /* SetupItemTableCellView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SetupItemTableCellView.xib; sourceTree = "<group>"; };
 		46D1D6AC2B137DA000E7B31D /* FileSystemOperations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileSystemOperations.swift; sourceTree = "<group>"; };
 		46D1D6AE2B15C47400E7B31D /* InstalledApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstalledApp.swift; sourceTree = "<group>"; };
+		46DBCEF72B32DAF600323348 /* CreateActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateActivityViewController.swift; sourceTree = "<group>"; };
+		46DBCEF92B337F0200323348 /* CheckboxImageTextComboCollectionViewItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxImageTextComboCollectionViewItem.swift; sourceTree = "<group>"; };
+		46DBCEFA2B337F0200323348 /* CheckboxImageTextComboCollectionViewItem.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CheckboxImageTextComboCollectionViewItem.xib; sourceTree = "<group>"; };
+		46DBCEFF2B36033000323348 /* ReportManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportManager.swift; sourceTree = "<group>"; };
+		46DBCF012B36035700323348 /* ReporterManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReporterManager.swift; sourceTree = "<group>"; };
+		46DBCF082B36F6B300323348 /* Navigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigator.swift; sourceTree = "<group>"; };
+		46DBCF0A2B3709EE00323348 /* TableCellClickDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableCellClickDelegate.swift; sourceTree = "<group>"; };
+		46DBCF0C2B37109700323348 /* ToolbarBackButtonDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarBackButtonDelegate.swift; sourceTree = "<group>"; };
 		46F8FC1F2B1CE4E1003153BE /* ActivityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityManager.swift; sourceTree = "<group>"; };
 		46F8FC272B1DB2C7003153BE /* NSImage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSImage+Extensions.swift"; sourceTree = "<group>"; };
 		46F8FC312B244341003153BE /* SidebarCollectionViewItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarCollectionViewItem.swift; sourceTree = "<group>"; };
@@ -157,7 +169,6 @@
 		46B1D5012B08B8010091E1A9 /* TimedWork */ = {
 			isa = PBXGroup;
 			children = (
-				46D1D6AB2B137B9500E7B31D /* ViewModels */,
 				46D1D68D2B0E8F7E00E7B31D /* Protocols */,
 				46D1D6812B0AA33000E7B31D /* Extensions */,
 				46D1D67C2B0A61E000E7B31D /* Support */,
@@ -191,7 +202,6 @@
 		46B1D5302B08C5BF0091E1A9 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				46D1D6902B0E983E00E7B31D /* NavigationState.swift */,
 				46D1D69F2B12643600E7B31D /* SetupData.swift */,
 				46D1D6AE2B15C47400E7B31D /* InstalledApp.swift */,
 				46F8FC352B244751003153BE /* Sidebar.swift */,
@@ -209,6 +219,7 @@
 				46F8FC3B2B246CBD003153BE /* MainAppViewController.swift */,
 				46F8FC3D2B246E9E003153BE /* MainAppMenuViewController.swift */,
 				46F8FC3F2B246EBB003153BE /* MainAppContentViewController.swift */,
+				46DBCEF72B32DAF600323348 /* CreateActivityViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -224,6 +235,8 @@
 				46F8FC372B24566F003153BE /* SidebarHeaderView.swift */,
 				46F8FC382B24566F003153BE /* SidebarHeaderView.xib */,
 				46A1F5132B24AE13000D33D4 /* SidebarCollectionView.swift */,
+				46DBCEF92B337F0200323348 /* CheckboxImageTextComboCollectionViewItem.swift */,
+				46DBCEFA2B337F0200323348 /* CheckboxImageTextComboCollectionViewItem.xib */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -235,6 +248,11 @@
 				46D1D6982B0EA8CD00E7B31D /* Controllers */,
 				46D1D6842B0D3DB500E7B31D /* Animators */,
 				46B1D5022B08B8010091E1A9 /* AppDelegate.swift */,
+				46DBCF082B36F6B300323348 /* Navigator.swift */,
+				46D1D6AC2B137DA000E7B31D /* FileSystemOperations.swift */,
+				46F8FC1F2B1CE4E1003153BE /* ActivityManager.swift */,
+				46DBCEFF2B36033000323348 /* ReportManager.swift */,
+				46DBCF012B36035700323348 /* ReporterManager.swift */,
 			);
 			path = Support;
 			sourceTree = "<group>";
@@ -242,7 +260,6 @@
 		46D1D6812B0AA33000E7B31D /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				46D1D6922B0EA2CC00E7B31D /* NSViewController+Extensions.swift */,
 				46D1D69B2B0EB3D200E7B31D /* NSToolbar+Extensions.swift */,
 				46F8FC272B1DB2C7003153BE /* NSImage+Extensions.swift */,
 			);
@@ -261,6 +278,8 @@
 		46D1D68D2B0E8F7E00E7B31D /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
+				46DBCF0A2B3709EE00323348 /* TableCellClickDelegate.swift */,
+				46DBCF0C2B37109700323348 /* ToolbarBackButtonDelegate.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -271,15 +290,6 @@
 				46D1D6962B0EA75500E7B31D /* MainWindowController.swift */,
 			);
 			path = Controllers;
-			sourceTree = "<group>";
-		};
-		46D1D6AB2B137B9500E7B31D /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-				46D1D6AC2B137DA000E7B31D /* FileSystemOperations.swift */,
-				46F8FC1F2B1CE4E1003153BE /* ActivityManager.swift */,
-			);
-			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -388,6 +398,7 @@
 			files = (
 				46F8FC3A2B24566F003153BE /* SidebarHeaderView.xib in Resources */,
 				46D1D6AA2B129EA900E7B31D /* SetupItemTableCellView.xib in Resources */,
+				46DBCEFC2B337F0200323348 /* CheckboxImageTextComboCollectionViewItem.xib in Resources */,
 				46B1D50A2B08B8020091E1A9 /* Assets.xcassets in Resources */,
 				46F8FC342B244341003153BE /* SidebarCollectionViewItem.xib in Resources */,
 				46B1D50D2B08B8020091E1A9 /* Main.storyboard in Resources */,
@@ -415,25 +426,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				46D1D6912B0E983E00E7B31D /* NavigationState.swift in Sources */,
+				46DBCF092B36F6B300323348 /* Navigator.swift in Sources */,
 				46F8FC402B246EBB003153BE /* MainAppContentViewController.swift in Sources */,
 				46B1D5052B08B8010091E1A9 /* SplashViewController.swift in Sources */,
+				46DBCF002B36033000323348 /* ReportManager.swift in Sources */,
 				46D1D6862B0D3DDA00E7B31D /* FadeInAnimator.swift in Sources */,
-				46D1D6932B0EA2CC00E7B31D /* NSViewController+Extensions.swift in Sources */,
 				46B1D5032B08B8010091E1A9 /* AppDelegate.swift in Sources */,
 				46F8FC392B24566F003153BE /* SidebarHeaderView.swift in Sources */,
 				46D1D67E2B0A630B00E7B31D /* PreSetupViewController.swift in Sources */,
+				46DBCF022B36035700323348 /* ReporterManager.swift in Sources */,
+				46DBCF0B2B3709EE00323348 /* TableCellClickDelegate.swift in Sources */,
 				46D1D6A62B12887B00E7B31D /* SetupItemTableCellView.swift in Sources */,
 				46D1D6882B0D5D6100E7B31D /* SlideInFromLeftAnimator.swift in Sources */,
 				46D1D69C2B0EB3D200E7B31D /* NSToolbar+Extensions.swift in Sources */,
 				469612242B25FEF4003EC4F4 /* SidebarListLayout.swift in Sources */,
+				46DBCF0D2B37109700323348 /* ToolbarBackButtonDelegate.swift in Sources */,
 				46D1D6972B0EA75500E7B31D /* MainWindowController.swift in Sources */,
 				46F8FC3E2B246E9E003153BE /* MainAppMenuViewController.swift in Sources */,
 				46D1D6A02B12643600E7B31D /* SetupData.swift in Sources */,
 				46F8FC362B244751003153BE /* Sidebar.swift in Sources */,
 				46B1D5082B08B8010091E1A9 /* TimedWork.xcdatamodeld in Sources */,
 				46F8FC202B1CE4E1003153BE /* ActivityManager.swift in Sources */,
+				46DBCEFB2B337F0200323348 /* CheckboxImageTextComboCollectionViewItem.swift in Sources */,
 				46D1D6AD2B137DA000E7B31D /* FileSystemOperations.swift in Sources */,
+				46DBCEF82B32DAF600323348 /* CreateActivityViewController.swift in Sources */,
 				46F8FC332B244341003153BE /* SidebarCollectionViewItem.swift in Sources */,
 				46F8FC282B1DB2C7003153BE /* NSImage+Extensions.swift in Sources */,
 				46D1D69E2B1249D700E7B31D /* SetupRightTableViewController.swift in Sources */,

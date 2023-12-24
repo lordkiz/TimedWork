@@ -38,7 +38,12 @@ class SetupRightViewController: NSViewController, NSTableViewDelegate, NSTableVi
         theTableView.topAnchor.constraint(equalTo: view.topAnchor, constant: 30).isActive = true
         theTableView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         theTableView.reloadData()
-
+    }
+    
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+        if keyPath == "pressedRow", let pressedRow = change?[.newKey] {
+            
+        }
     }
     
     func tableView(_ tableView: NSTableView, heightOfRow row: Int) -> CGFloat {
@@ -52,6 +57,8 @@ class SetupRightViewController: NSViewController, NSTableViewDelegate, NSTableVi
     func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
         let cellView = tableView.makeView(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "SetupItemTableCellView"), owner: self) as! SetupItemTableCellView
         cellView.updateViews(data: data[row])
+        cellView.row = row
+        cellView.tableCellClickDelegate = self
         return cellView
     }
     
@@ -68,4 +75,15 @@ class SetupRightViewController: NSViewController, NSTableViewDelegate, NSTableVi
         return SetupItemData.data.count
     }
     
+}
+
+extension SetupRightViewController: TableCellClickDelegate {
+    func onClick(row: Int) {
+        if (row == 0) {
+            guard let vc = storyboard?.instantiateController(withIdentifier: "CreateActivityViewController") as? CreateActivityViewController else {
+                return
+            }
+            Navigator.shared.navigate(from: self, to: vc)
+        }
+    }
 }

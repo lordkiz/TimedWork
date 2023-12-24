@@ -14,7 +14,6 @@ class MainAppMenuViewController: NSViewController {
         
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         configureCollectionView()
     }
 }
@@ -57,17 +56,17 @@ extension MainAppMenuViewController : NSCollectionViewDelegate {
 extension MainAppMenuViewController: NSCollectionViewDataSource {
     
     func numberOfSections(in collectionView: NSCollectionView) -> Int {
-        return Sidebar.sections.count
+        return Sidebar().computeSections().count
     }
     
     func collectionView(_ collectionView: NSCollectionView, numberOfItemsInSection section: Int) -> Int {
-        return Sidebar.sections[SidebarSection(rawValue: section)!]!.count
+        return Sidebar().computeSections()[SidebarSection(rawValue: section)!]!.count
     }
     
     func collectionView(_ collectionView: NSCollectionView, itemForRepresentedObjectAt indexPath: IndexPath) -> NSCollectionViewItem {
         
         let view = collectionView.makeItem(withIdentifier: SidebarCollectionViewItem.identifier, for: indexPath) as! SidebarCollectionViewItem
-        let data = Sidebar.sections[SidebarSection(rawValue: indexPath.section)!]![indexPath.item]
+        let data = Sidebar().computeSections()[SidebarSection(rawValue: indexPath.section)!]![indexPath.item]
         view.updateViews(data: data)
         return view
         
@@ -93,20 +92,6 @@ extension MainAppMenuViewController: NSCollectionViewDataSource {
 //        let size = NSTextField(labelWithString: string).sizeThatFits(NSSize(width: 400, height: 800))
 //
 //        return NSSize(width: 400, height: size.height > 80 ? size.height : 80)
-//    }
-    
-//    private func configureDataSource() {
-//        self.dataSource = NSCollectionViewDiffableDataSource<SidebarSection, SidebarItem>(collectionView: collectionView){
-//            (collectionView, indexPath, item) -> NSCollectionViewItem in
-//            switch item.type {
-//            case .header:
-//                return collectionView.makeItem(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "headerItem"), for: indexPath)
-//            case .expandableRow:
-//                return collectionView.makeItem(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "expandableRowItem"), for: indexPath)
-//            case .row:
-//                return collectionView.makeItem(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "rowItem"), for: indexPath)
-//            }
-//        }
 //    }
 }
 

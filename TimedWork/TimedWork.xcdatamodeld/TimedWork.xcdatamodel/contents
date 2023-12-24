@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21754" systemVersion="22F82" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Activity" representedClassName="Activity" syncable="YES" codeGenerationType="class">
-        <attribute name="name" optional="YES" attributeType="String"/>
-        <relationship name="reporters" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Reporter" inverseName="activities" inverseEntity="Reporter"/>
+        <attribute name="name" attributeType="String"/>
+        <relationship name="reporters" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Reporter" inverseName="activities" inverseEntity="Reporter"/>
         <relationship name="reports" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Report" inverseName="activity" inverseEntity="Report"/>
     </entity>
     <entity name="Report" representedClassName="Report" syncable="YES" codeGenerationType="class">
