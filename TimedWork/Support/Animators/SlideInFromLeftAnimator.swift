@@ -7,15 +7,18 @@
 
 import Cocoa
 
+let darkBackground = NSColor(red: 25/255, green: 25/255, blue: 25/255, alpha: 1.0).cgColor
+let lightBackground = NSColor(red: 247/255, green: 247/255, blue: 247/255, alpha: 1.0).cgColor
+
 private class BackgroundView: NSView {
     override init(frame frameRect: NSRect) {
         super.init(frame: frameRect)
         wantsLayer = true
         let appearance = NSAppearance.currentDrawing().name
         if (appearance == .aqua) {
-            layer?.backgroundColor = NSColor(white: 150, alpha: 1).cgColor
+            layer?.backgroundColor = lightBackground
         } else {
-            layer?.backgroundColor = NSColor(red: 0, green: 0, blue: 0, alpha: 1).cgColor
+            layer?.backgroundColor = darkBackground
         }
         NSApplication.shared.addObserver(self, forKeyPath: "effectiveAppearance",options: .new, context: nil)
     }
@@ -27,9 +30,9 @@ private class BackgroundView: NSView {
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
         if keyPath == "effectiveAppearance", let appearance = change?[.newKey] {
             if ((appearance as! NSAppearance).name == .aqua) {
-                layer?.backgroundColor = NSColor(white: 150, alpha: 1).cgColor
+                layer?.backgroundColor = lightBackground
             } else {
-                layer?.backgroundColor = NSColor(red: 0, green: 0, blue: 0, alpha: 1).cgColor
+                layer?.backgroundColor = darkBackground
             }
         }
     }

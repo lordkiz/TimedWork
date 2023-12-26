@@ -17,14 +17,29 @@ class ActivityManager: NSObject {
         fetchRequest = Activity.fetchRequest()
     }
     
+    private func getApp() -> AppDelegate? {
+        guard let app = NSApplication.shared.delegate as? AppDelegate else { return nil }
+        return app
+    }
+    
     var activities: [Activity]  {
-        guard let app = NSApplication.shared.delegate as? AppDelegate else { return [] }
+        guard let app = getApp() else { return [] }
         guard let activities = try? app.persistentContainer.viewContext.fetch(fetchRequest) else { return [] }
         return activities
     }
     
+    func getActivity(objectID: NSManagedObjectID) -> Activity? {
+        guard let app = getApp() else { return nil }
+        do {
+            let activity = try app.persistentContainer.viewContext.existingObject(with: objectID)
+            return activity as? Activity
+        } catch {
+            return nil
+        }
+    }
+    
     func createActivity(name: String, selectedApps: [InstalledApp]) -> Bool {
-        guard let app = NSApplication.shared.delegate as? AppDelegate else { return false }
+        guard let app = getApp() else { return false }
         let viewContext = app.persistentContainer.viewContext
         
         if let activityEntity = NSEntityDescription.entity(forEntityName: "Activity", in: viewContext) {
@@ -65,5 +80,17 @@ class ActivityManager: NSObject {
             }
         }
         return false
+    }
+    
+    func deleteActivity(objectID: NSManagedObjectID) -> Bool {
+        guard let activity = getActivity(objectID: objectID) else { return false }
+        let deleteRequest = NSBatchDeleteRequest(objectIDs: [objectID])
+        guard let app = getApp() else { return false }
+        do {
+            try app.persistentContainer.viewContext.execute(deleteRequest)
+        } catch {
+            return false
+        }
+        return true
     }
 }

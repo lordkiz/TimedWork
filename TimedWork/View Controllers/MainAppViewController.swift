@@ -11,7 +11,7 @@ class MainAppViewController: NSSplitViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        splitView.setPosition(100, ofDividerAt: 0)
+        splitView.setPosition(250, ofDividerAt: 0)
     }
     
 }

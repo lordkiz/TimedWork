@@ -15,6 +15,12 @@ class MainAppMenuViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureCollectionView()
+        NotificationCenter.default.addObserver(self, selector: #selector(onEntityChanged(notification:)), name: .activityDeleted, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(onEntityChanged(notification:)), name: .activityCreated, object: nil)
+    }
+    
+    @IBAction private func onEntityChanged(notification: Notification) {
+        collectionView.reloadData()
     }
 }
 
@@ -34,7 +40,7 @@ extension MainAppMenuViewController : NSCollectionViewDelegate {
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
         item.contentInsets = NSDirectionalEdgeInsets(top: 2, leading: 10, bottom: 2, trailing: 10)
         
-        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .estimated(25))
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .estimated(30))
         let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitems: [item])
         
         let section = NSCollectionLayoutSection(group: group)

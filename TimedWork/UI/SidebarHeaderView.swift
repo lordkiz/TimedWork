@@ -17,6 +17,8 @@ class SidebarHeaderView: NSView {
     
     override func draw(_ dirtyRect: NSRect) {
         super.draw(dirtyRect)
+        mouseOverArea = NSTrackingArea(rect: bounds, options: [.activeAlways, .mouseEnteredAndExited], owner: self)
+        addTrackingArea(mouseOverArea)
         NSColor(named: "HoverColor")?.set()
         if hovering {
             let path = NSBezierPath(rect: bounds)
@@ -36,8 +38,6 @@ class SidebarHeaderView: NSView {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        mouseOverArea = NSTrackingArea(rect: bounds, options: [.activeAlways, .mouseEnteredAndExited], owner: self)
-        addTrackingArea(mouseOverArea)
     }
     
     override func mouseEntered(with event: NSEvent) {

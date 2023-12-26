@@ -18,7 +18,7 @@ class CreateActivityViewController: NSViewController {
     
     var theScrollView: NSScrollView!
     
-    var installedAppsCollectionView: NSCollectionView!
+    @IBOutlet var installedAppsCollectionView: NSCollectionView!
     
     let installedApps: [InstalledApp]! = FileSystemOperations.shared.getInstalledApps()
     
@@ -50,14 +50,16 @@ class CreateActivityViewController: NSViewController {
         let created = ActivityManager.shared.createActivity(name: activityNameTextField.stringValue, selectedApps: selectedApps.map { (string, installedApp) in
             return installedApp
         })
-        print("created \(created)")
+        if created {
+            NotificationCenter.default.post(name: .activityCreated, object: self)
+        }
     }
     
 }
 
 extension CreateActivityViewController: NSCollectionViewDelegate {
     private func configureCollectionView() {
-        installedAppsCollectionView = NSCollectionView(frame: NSRect(x: 0, y: 0, width: activityNameTextField.visibleRect.width, height: 300))
+//        installedAppsCollectionView = NSCollectionView(frame: NSRect(x: 0, y: 0, width: activityNameTextField.visibleRect.width, height: 300))
         
         installedAppsCollectionView.delegate = self
         installedAppsCollectionView.dataSource = self
@@ -65,9 +67,9 @@ extension CreateActivityViewController: NSCollectionViewDelegate {
         installedAppsCollectionView.collectionViewLayout = listLayout()
         installedAppsCollectionView.register(CheckboxImageTextComboCollectionViewItem.self, forItemWithIdentifier: CheckboxImageTextComboCollectionViewItem.identifier)
         
-        theScrollView = NSScrollView(frame: NSRect(x: 0, y: 0, width: activityNameTextField.visibleRect.width, height: 200))
-        theScrollView.documentView = installedAppsCollectionView
-        view.addSubview(theScrollView)
+//        theScrollView = NSScrollView(frame: NSRect(x: 0, y: 0, width: activityNameTextField.visibleRect.width, height: 200))
+//        theScrollView.documentView = installedAppsCollectionView
+//        view.addSubview(theScrollView)
         setUpViews()
         
         installedAppsCollectionView.reloadData()
@@ -92,32 +94,32 @@ extension CreateActivityViewController: NSCollectionViewDelegate {
         createButton.isEnabled = !activityNameTextField.stringValue.isEmpty
         createButton.action = #selector(createActivity(_:))
         
-        createButton.translatesAutoresizingMaskIntoConstraints = false
-        enterNameOfActivityLabel.translatesAutoresizingMaskIntoConstraints = false
-        activityNameTextField.translatesAutoresizingMaskIntoConstraints = false
-        selectAppsLabel.translatesAutoresizingMaskIntoConstraints = false
-        theScrollView.translatesAutoresizingMaskIntoConstraints = false
-        
-        view.addConstraints([
-            enterNameOfActivityLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 70),
-            enterNameOfActivityLabel.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 50),
-            
-            activityNameTextField.topAnchor.constraint(equalTo: enterNameOfActivityLabel.bottomAnchor, constant: 10),
-            activityNameTextField.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 50),
-            
-            selectAppsLabel.topAnchor.constraint(equalTo: activityNameTextField.bottomAnchor, constant: 20),
-            selectAppsLabel.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 50),
-            
-            createButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -20),
-            createButton.widthAnchor.constraint(equalTo: activityNameTextField.widthAnchor),
-            
-            theScrollView.topAnchor.constraint(equalTo: selectAppsLabel.bottomAnchor, constant: 10),
-            theScrollView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 50),
-            theScrollView.bottomAnchor.constraint(equalTo: createButton.topAnchor, constant: -10),
-            theScrollView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -100),
-            theScrollView.widthAnchor.constraint(equalTo: activityNameTextField.widthAnchor)
-            
-        ])
+//        createButton.translatesAutoresizingMaskIntoConstraints = false
+//        enterNameOfActivityLabel.translatesAutoresizingMaskIntoConstraints = false
+//        activityNameTextField.translatesAutoresizingMaskIntoConstraints = false
+//        selectAppsLabel.translatesAutoresizingMaskIntoConstraints = false
+//        theScrollView.translatesAutoresizingMaskIntoConstraints = false
+//
+//        view.addConstraints([
+//            enterNameOfActivityLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 70),
+//            enterNameOfActivityLabel.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 50),
+//
+//            activityNameTextField.topAnchor.constraint(equalTo: enterNameOfActivityLabel.bottomAnchor, constant: 10),
+//            activityNameTextField.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 50),
+//
+//            selectAppsLabel.topAnchor.constraint(equalTo: activityNameTextField.bottomAnchor, constant: 20),
+//            selectAppsLabel.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 50),
+//
+//            createButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -20),
+//            createButton.widthAnchor.constraint(equalTo: activityNameTextField.widthAnchor),
+//
+//            theScrollView.topAnchor.constraint(equalTo: selectAppsLabel.bottomAnchor, constant: 10),
+//            theScrollView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 50),
+//            theScrollView.bottomAnchor.constraint(equalTo: createButton.topAnchor, constant: -10),
+//            theScrollView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -100),
+//            theScrollView.widthAnchor.constraint(equalTo: activityNameTextField.widthAnchor)
+//
+//        ])
     }
 }
 

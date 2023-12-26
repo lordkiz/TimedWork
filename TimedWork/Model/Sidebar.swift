@@ -7,8 +7,19 @@
 
 import Cocoa
 
-enum SidebarItemType: Int {
-    case header, expandableRow, row
+
+enum SidebarItemObjectType: Int {
+    case dashboard,
+        activities,
+        meetings,
+         
+        // entities
+        activityEntity,
+         
+        // company
+        about,
+        terms,
+        privacy
 }
 
 enum SidebarSection: Int, CustomStringConvertible {
@@ -23,44 +34,31 @@ enum SidebarSection: Int, CustomStringConvertible {
     }
 }
 
-struct SidebarItem: Hashable, Identifiable {
-    let id: UUID
-    let type: SidebarItemType
+struct SidebarItem: Hashable {
     let title: String
     let image: NSImage?
-    static func header(title: String, id: UUID = UUID()) -> Self {
-        return SidebarItem(id: id, type: .header, title: title, image: nil)
+    let objectID: NSManagedObjectID?
+    let objectType: SidebarItemObjectType?
+    static func row(title: String, image: NSImage?, objectID: NSManagedObjectID? = nil, objectType: SidebarItemObjectType? = .none) -> Self {
+        return SidebarItem(title: title, image: image, objectID: objectID, objectType: objectType)
     }
-    static func expandableRow(title: String, image: NSImage?, id: UUID = UUID()) -> Self {
-        return SidebarItem(id: id, type: .expandableRow, title: title, image: image)
-    }
-    static func row(title: String, image: NSImage?, id: UUID = UUID()) -> Self {
-        return SidebarItem(id: id, type: .row, title: title, image: image)
-    }
-    static func rowWithoutImage(title: String, id: UUID = UUID()) -> Self {
-        return SidebarItem(id: id, type: .row, title: title, image: nil)
+    static func rowWithoutImage(title: String, objectID: NSManagedObjectID? = nil, objectType: SidebarItemObjectType? = .none) -> Self {
+        return SidebarItem(title: title, image: nil, objectID: objectID, objectType: objectType)
     }
 }
-
-struct RowIdentifier {
-    static let dashboard = UUID()
-    static let activity = UUID()
-    static let meeting = UUID()
-}
-
 
 class Sidebar: NSObject {
     func computeSections() -> Dictionary<SidebarSection, [SidebarItem]> {
         var result: Dictionary<SidebarSection, [SidebarItem]> = [
             SidebarSection.main: [
-                SidebarItem.row(title: "Dashboard", image: NSImage(systemSymbolName: "speedometer", accessibilityDescription: nil)),
-                SidebarItem.row(title: "Activities", image: NSImage(systemSymbolName: "laptopcomputer", accessibilityDescription: nil)),
-                SidebarItem.row(title: "Meetings", image: NSImage(systemSymbolName: "video.circle", accessibilityDescription: nil))
+                SidebarItem.row(title: "Dashboard", image: NSImage(systemSymbolName: "speedometer", accessibilityDescription: nil), objectType: .dashboard),
+                SidebarItem.row(title: "Activities", image: NSImage(systemSymbolName: "laptopcomputer", accessibilityDescription: nil), objectType: .activities),
+                SidebarItem.row(title: "Meetings", image: NSImage(systemSymbolName: "video.circle", accessibilityDescription: nil), objectType: .meetings)
             ],
             SidebarSection.company: [
-                SidebarItem.rowWithoutImage(title: "About"),
-                SidebarItem.rowWithoutImage(title: "Terms & Conditions"),
-                SidebarItem.rowWithoutImage(title: "Privacy"),
+                SidebarItem.rowWithoutImage(title: "About", objectType: .about),
+                SidebarItem.rowWithoutImage(title: "Terms & Conditions", objectType: .terms),
+                SidebarItem.rowWithoutImage(title: "Privacy", objectType: .privacy),
             ]
         ]
         // Activities
@@ -69,7 +67,7 @@ class Sidebar: NSObject {
             result[SidebarSection.activity] = [SidebarItem.rowWithoutImage(title: "No activities")]
         } else {
             result[SidebarSection.activity] = myActivities.map { (activity) in
-                return SidebarItem.row(title: activity.name!, image: NSImage(systemSymbolName: "laptopcomputer", accessibilityDescription: nil))
+                return SidebarItem.row(title: activity.name!, image: NSImage(systemSymbolName: "laptopcomputer", accessibilityDescription: nil), objectID: activity.objectID, objectType: .activityEntity)
             }
         }
         
