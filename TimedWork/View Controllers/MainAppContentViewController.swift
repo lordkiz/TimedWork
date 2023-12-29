@@ -20,6 +20,7 @@ class MainAppContentViewController: NSViewController {
         case .activityEntity:
             guard let vc = storyboard?.instantiateController(withIdentifier: "ActivityDetailViewController") as? ActivityDetailViewController else { return }
             vc.objectID = notification.userInfo?["objectID"] as? NSManagedObjectID
+            vc.activityInternalID = notification.userInfo?["internalID"] as? UUID
             return Navigator.shared.navigate(from: self, to: vc)
         default:
             return

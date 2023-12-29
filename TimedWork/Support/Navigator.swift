@@ -7,7 +7,7 @@
 
 import Cocoa
 
-class Navigator: NSObject {
+final class Navigator: NSObject {
     static let shared: Navigator = Navigator()
     
     override init() {

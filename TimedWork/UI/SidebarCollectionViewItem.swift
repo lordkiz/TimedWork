@@ -16,6 +16,7 @@ class SidebarCollectionViewItem: NSCollectionViewItem {
     
     var objectID: NSManagedObjectID?
     var objectType: SidebarItemObjectType?
+    var internalID: UUID?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +31,7 @@ class SidebarCollectionViewItem: NSCollectionViewItem {
     
     override func mouseDown(with event: NSEvent) {
         super.mouseDown(with: event)
-        NotificationCenter.default.post(name: .sidebarItem,object: self, userInfo: ["objectID": objectID, "objectType": objectType] as Dictionary<String, Any?> as [AnyHashable : Any])
+        NotificationCenter.default.post(name: .sidebarItem,object: self, userInfo: ["objectID": objectID, "objectType": objectType, "internalID": internalID] as Dictionary<String, Any?> as [AnyHashable : Any])
     }
 
     
@@ -41,6 +42,7 @@ class SidebarCollectionViewItem: NSCollectionViewItem {
         }
         objectID = data.objectID
         objectType = data.objectType
+        internalID = data.internalID
     }
 }
 

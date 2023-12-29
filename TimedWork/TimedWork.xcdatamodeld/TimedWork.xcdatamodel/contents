@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21754" systemVersion="22F82" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Activity" representedClassName="Activity" syncable="YES" codeGenerationType="class">
+        <attribute name="internalID" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="name" attributeType="String"/>
-        <relationship name="reporters" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Reporter" inverseName="activities" inverseEntity="Reporter"/>
-        <relationship name="reports" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Report" inverseName="activity" inverseEntity="Report"/>
+        <relationship name="reporters" optional="YES" toMany="YES" deletionRule="No Action" destinationEntity="Reporter" inverseName="activities" inverseEntity="Reporter"/>
+        <relationship name="reports" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Report" inverseName="activity" inverseEntity="Report"/>
     </entity>
     <entity name="Report" representedClassName="Report" syncable="YES" codeGenerationType="class">
         <attribute name="endDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="internalID" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="startDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="type" attributeType="String"/>
         <relationship name="activity" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Activity" inverseName="reports" inverseEntity="Activity"/>
@@ -16,7 +18,8 @@
         <attribute name="appIcon" optional="YES" attributeType="URI"/>
         <attribute name="appName" optional="YES" attributeType="String"/>
         <attribute name="appUrl" optional="YES" attributeType="String"/>
-        <relationship name="activities" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Activity" inverseName="reporters" inverseEntity="Activity"/>
-        <relationship name="reports" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Report" inverseName="reporter" inverseEntity="Report"/>
+        <attribute name="internalID" attributeType="UUID" usesScalarValueType="NO"/>
+        <relationship name="activities" optional="YES" toMany="YES" deletionRule="No Action" destinationEntity="Activity" inverseName="reporters" inverseEntity="Activity"/>
+        <relationship name="reports" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Report" inverseName="reporter" inverseEntity="Report"/>
     </entity>
 </model>

@@ -40,8 +40,9 @@ class ReporterManager: NSObject {
                 let rep = NSManagedObject(entity: reporterEntity, insertInto: viewContext) as! Reporter
                 rep.appUrl = installedApp.appUrl.absoluteString
                 rep.appName = installedApp.appName
+                rep.internalID = UUID()
                 app.saveAction(self)
-                return fetchReporterBy(appUrl: installedApp.appUrl.absoluteString)
+                return rep
             }
             return nil
         }

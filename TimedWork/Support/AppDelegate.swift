@@ -9,8 +9,11 @@ import Cocoa
 @main
 class AppDelegate: NSObject, NSApplicationDelegate {
 
+    var workspaceObserver: WorkspaceObserver?
+    
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         // Insert code here to initialize your application
+        workspaceObserver = WorkspaceObserver()
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {

@@ -784,7 +784,7 @@
         <scene sceneID="WoX-Cn-3Hs">
             <objects>
                 <viewController storyboardIdentifier="CreateActivityViewController" id="zFN-Yu-hg5" customClass="CreateActivityViewController" customModule="TimedWork" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" misplaced="YES" id="6e2-xV-QMK">
+                    <view key="view" id="6e2-xV-QMK">
                         <rect key="frame" x="0.0" y="0.0" width="495" height="693"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
@@ -900,7 +900,7 @@
             <objects>
                 <viewController storyboardIdentifier="ActivityDetailViewController" id="Dbh-Jp-6Aa" customClass="ActivityDetailViewController" customModule="TimedWork" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="AxG-KN-NKC">
-                        <rect key="frame" x="0.0" y="0.0" width="495" height="431"/>
+                        <rect key="frame" x="0.0" y="0.0" width="510" height="431"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="nGD-Qa-rTh">
@@ -915,10 +915,10 @@
                                 </textFieldCell>
                             </textField>
                             <box verticalHuggingPriority="750" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="6U7-BJ-RCg">
-                                <rect key="frame" x="0.0" y="81" width="495" height="5"/>
+                                <rect key="frame" x="0.0" y="81" width="510" height="5"/>
                             </box>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="f1y-xH-KoS">
-                                <rect key="frame" x="358" y="36" width="124" height="32"/>
+                                <rect key="frame" x="373" y="36" width="124" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="5vC-eN-YzF"/>
                                     <constraint firstAttribute="width" constant="110" id="F2O-84-5D5"/>
@@ -930,7 +930,7 @@
                                 <color key="bezelColor" name="systemRedColor" catalog="System" colorSpace="catalog"/>
                             </button>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="rTl-dm-hl7">
-                                <rect key="frame" x="238" y="36" width="124" height="32"/>
+                                <rect key="frame" x="253" y="36" width="124" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="JWl-7T-Grb"/>
                                     <constraint firstAttribute="width" constant="110" id="pqk-DT-9Sy"/>
@@ -942,18 +942,27 @@
                                 </buttonCell>
                                 <color key="bezelColor" name="AccentColor"/>
                             </button>
-                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="ACE-bt-uOa">
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="ACE-bt-uOa" customClass="PieChartView" customModule="TimedWork" customModuleProvider="target">
                                 <rect key="frame" x="20" y="144" width="200" height="150"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="6HG-z2-v5s"/>
                                     <constraint firstAttribute="height" constant="150" id="k9i-0g-lZx"/>
                                 </constraints>
                             </customView>
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="K53-Jg-2u6" customClass="BarChartView" customModule="TimedWork" customModuleProvider="target">
+                                <rect key="frame" x="260" y="144" width="230" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" id="97N-dO-cZ4"/>
+                                    <constraint firstAttribute="height" constant="150" id="pbR-jN-2tQ"/>
+                                </constraints>
+                            </customView>
                         </subviews>
                         <constraints>
+                            <constraint firstItem="K53-Jg-2u6" firstAttribute="leading" secondItem="ACE-bt-uOa" secondAttribute="trailing" constant="40" id="0Pd-QY-ucF"/>
                             <constraint firstItem="BdH-V7-WiD" firstAttribute="bottom" secondItem="f1y-xH-KoS" secondAttribute="bottom" constant="23" id="6Ii-oO-k4t"/>
                             <constraint firstItem="nGD-Qa-rTh" firstAttribute="leading" secondItem="BdH-V7-WiD" secondAttribute="leading" id="BR0-lX-q9S"/>
                             <constraint firstItem="f1y-xH-KoS" firstAttribute="top" secondItem="6U7-BJ-RCg" secondAttribute="bottom" constant="20" id="DZu-fP-Kv5"/>
+                            <constraint firstItem="K53-Jg-2u6" firstAttribute="trailing" secondItem="BdH-V7-WiD" secondAttribute="trailing" id="Edb-Sf-Fq0"/>
                             <constraint firstItem="f1y-xH-KoS" firstAttribute="leading" secondItem="rTl-dm-hl7" secondAttribute="trailing" constant="10" id="K8o-JV-c9e"/>
                             <constraint firstItem="nGD-Qa-rTh" firstAttribute="top" secondItem="BdH-V7-WiD" secondAttribute="top" constant="20" id="KqV-7C-oQF"/>
                             <constraint firstItem="BdH-V7-WiD" firstAttribute="trailing" secondItem="f1y-xH-KoS" secondAttribute="trailing" id="ME0-gQ-P1g"/>
@@ -961,6 +970,8 @@
                             <constraint firstItem="ACE-bt-uOa" firstAttribute="top" secondItem="nGD-Qa-rTh" secondAttribute="bottom" constant="20" id="TS4-lj-IsX"/>
                             <constraint firstItem="f1y-xH-KoS" firstAttribute="top" secondItem="6U7-BJ-RCg" secondAttribute="bottom" constant="20" id="Ubz-Ew-Y9s"/>
                             <constraint firstItem="6U7-BJ-RCg" firstAttribute="top" secondItem="ACE-bt-uOa" secondAttribute="bottom" constant="60" id="aMZ-Bo-3sE"/>
+                            <constraint firstItem="K53-Jg-2u6" firstAttribute="top" secondItem="nGD-Qa-rTh" secondAttribute="bottom" constant="20" id="g96-cu-FvX"/>
+                            <constraint firstItem="6U7-BJ-RCg" firstAttribute="top" secondItem="K53-Jg-2u6" secondAttribute="bottom" constant="60" id="hAc-9d-Bgi"/>
                             <constraint firstAttribute="trailing" secondItem="6U7-BJ-RCg" secondAttribute="trailing" id="nzR-2F-5gM"/>
                             <constraint firstItem="ACE-bt-uOa" firstAttribute="leading" secondItem="BdH-V7-WiD" secondAttribute="leading" id="o6f-KO-doq"/>
                             <constraint firstItem="6U7-BJ-RCg" firstAttribute="leading" secondItem="AxG-KN-NKC" secondAttribute="leading" id="wCk-Ej-vrE"/>
@@ -971,8 +982,10 @@
                     </view>
                     <connections>
                         <outlet property="activityNameTextLabel" destination="nGD-Qa-rTh" id="ihe-UP-aLv"/>
+                        <outlet property="barChartView" destination="K53-Jg-2u6" id="jik-gB-fkI"/>
                         <outlet property="deleteButton" destination="f1y-xH-KoS" id="f3K-Ab-Bj6"/>
                         <outlet property="editButton" destination="rTl-dm-hl7" id="VTj-DN-1dR"/>
+                        <outlet property="pieChartView" destination="ACE-bt-uOa" id="Xte-Q3-oc8"/>
                     </connections>
                 </viewController>
                 <customObject id="CKq-l1-Ivr" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>

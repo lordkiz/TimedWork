@@ -28,7 +28,7 @@ class ActivityManager: NSObject {
         return activities
     }
     
-    func getActivity(objectID: NSManagedObjectID) -> Activity? {
+    func getActivity(byObjectID objectID: NSManagedObjectID) -> Activity? {
         guard let app = getApp() else { return nil }
         do {
             let activity = try app.persistentContainer.viewContext.existingObject(with: objectID)
@@ -38,6 +38,15 @@ class ActivityManager: NSObject {
         }
     }
     
+    func getActivity(byID id: UUID) -> Activity? {
+        guard let app = getApp() else { return nil }
+        let viewContext = app.persistentContainer.viewContext
+        let request = Activity.fetchRequest()
+        request.predicate = NSPredicate(format: "%K == %@", "internalID", id as CVarArg)
+        guard let activities = try? viewContext.fetch(request) else { return nil }
+        return activities.first
+    }
+    
     func createActivity(name: String, selectedApps: [InstalledApp]) -> Bool {
         guard let app = getApp() else { return false }
         let viewContext = app.persistentContainer.viewContext
@@ -45,6 +54,7 @@ class ActivityManager: NSObject {
         if let activityEntity = NSEntityDescription.entity(forEntityName: "Activity", in: viewContext) {
             let activity = NSManagedObject(entity: activityEntity, insertInto: viewContext) as! Activity
             activity.name = name
+            activity.internalID = UUID()
             app.saveAction(self)
             
             var savedActivity: Activity
@@ -83,7 +93,7 @@ class ActivityManager: NSObject {
     }
     
     func deleteActivity(objectID: NSManagedObjectID) -> Bool {
-        guard let activity = getActivity(objectID: objectID) else { return false }
+        guard let activity = getActivity(byObjectID: objectID) else { return false }
         let deleteRequest = NSBatchDeleteRequest(objectIDs: [objectID])
         guard let app = getApp() else { return false }
         do {

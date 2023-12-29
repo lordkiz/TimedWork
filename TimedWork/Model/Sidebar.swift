@@ -38,12 +38,13 @@ struct SidebarItem: Hashable {
     let title: String
     let image: NSImage?
     let objectID: NSManagedObjectID?
+    let internalID: UUID?
     let objectType: SidebarItemObjectType?
-    static func row(title: String, image: NSImage?, objectID: NSManagedObjectID? = nil, objectType: SidebarItemObjectType? = .none) -> Self {
-        return SidebarItem(title: title, image: image, objectID: objectID, objectType: objectType)
+    static func row(title: String, image: NSImage?, objectID: NSManagedObjectID? = nil, objectType: SidebarItemObjectType? = .none, internalID: UUID? = nil) -> Self {
+        return SidebarItem(title: title, image: image, objectID: objectID, internalID: internalID, objectType: objectType)
     }
-    static func rowWithoutImage(title: String, objectID: NSManagedObjectID? = nil, objectType: SidebarItemObjectType? = .none) -> Self {
-        return SidebarItem(title: title, image: nil, objectID: objectID, objectType: objectType)
+    static func rowWithoutImage(title: String, objectID: NSManagedObjectID? = nil, objectType: SidebarItemObjectType? = .none, internalID: UUID? = nil) -> Self {
+        return SidebarItem(title: title, image: nil, objectID: objectID, internalID: internalID, objectType: objectType)
     }
 }
 
@@ -67,7 +68,7 @@ class Sidebar: NSObject {
             result[SidebarSection.activity] = [SidebarItem.rowWithoutImage(title: "No activities")]
         } else {
             result[SidebarSection.activity] = myActivities.map { (activity) in
-                return SidebarItem.row(title: activity.name!, image: NSImage(systemSymbolName: "laptopcomputer", accessibilityDescription: nil), objectID: activity.objectID, objectType: .activityEntity)
+                return SidebarItem.row(title: activity.name!, image: NSImage(systemSymbolName: "laptopcomputer", accessibilityDescription: nil), objectID: activity.objectID, objectType: .activityEntity, internalID: activity.internalID)
             }
         }
         
