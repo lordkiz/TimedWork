@@ -37,9 +37,7 @@ class SidebarCollectionViewItem: NSCollectionViewItem {
     
     func updateViews(data: SidebarItem) {
         titleText.stringValue = data.title
-        if (data.image != nil) {
-            itemImageView.image = data.image
-        }
+        itemImageView.image = data.image
         objectID = data.objectID
         objectType = data.objectType
         internalID = data.internalID

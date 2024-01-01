@@ -50,6 +50,7 @@
 		46FE222B2B3B520200503092 /* BarChartData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46FE222A2B3B520200503092 /* BarChartData.swift */; };
 		46FE222D2B3B527100503092 /* BarChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46FE222C2B3B527100503092 /* BarChartView.swift */; };
 		46FE222F2B3C64B800503092 /* WorkspaceObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46FE222E2B3C64B800503092 /* WorkspaceObserver.swift */; };
+		46FE22312B41BAC800503092 /* NSDate+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46FE22302B41BAC800503092 /* NSDate+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -117,6 +118,7 @@
 		46FE222A2B3B520200503092 /* BarChartData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarChartData.swift; sourceTree = "<group>"; };
 		46FE222C2B3B527100503092 /* BarChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarChartView.swift; sourceTree = "<group>"; };
 		46FE222E2B3C64B800503092 /* WorkspaceObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkspaceObserver.swift; sourceTree = "<group>"; };
+		46FE22302B41BAC800503092 /* NSDate+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSDate+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -260,6 +262,7 @@
 				46F8FC272B1DB2C7003153BE /* NSImage+Extensions.swift */,
 				46FE221B2B38827400503092 /* Notification+Extensions.swift */,
 				46FE22262B3B498A00503092 /* NSView+Extensions.swift */,
+				46FE22302B41BAC800503092 /* NSDate+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -443,6 +446,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				46FE22312B41BAC800503092 /* NSDate+Extensions.swift in Sources */,
 				46DBCF092B36F6B300323348 /* Navigator.swift in Sources */,
 				46F8FC402B246EBB003153BE /* MainAppContentViewController.swift in Sources */,
 				46DBCF002B36033000323348 /* ReportManager.swift in Sources */,

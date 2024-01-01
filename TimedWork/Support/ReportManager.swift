@@ -54,6 +54,15 @@ class ReportManager: NSObject {
         return reports
     }
     
+    func getReports(from start: Date, to end: Date) -> [Report] {
+        guard let app = NSApplication.shared.delegate as? AppDelegate else { return [] }
+        let viewContext = app.persistentContainer.viewContext
+        let request = Report.fetchRequest()
+        request.predicate = NSPredicate(format: "(startDate >= %@) AND (endDate <= %@)", argumentArray: [start, end])
+        guard let reports = try? viewContext.fetch(request) else { return [] }
+        return reports
+    }
+    
     func getReport(byID id: UUID) -> Report? {
         guard let app = NSApplication.shared.delegate as? AppDelegate else { return nil }
         let viewContext = app.persistentContainer.viewContext
@@ -108,5 +117,112 @@ class ReportManager: NSObject {
             // TODO
             print("error updating report")
         }
+    }
+}
+
+
+// MARK: - UTILS
+
+enum ReportGroupEnum: Int {
+    case day, week, month, threeMonths, sixMonths, oneYear
+}
+
+struct GroupedReport {
+    let from: Date?
+    let to: Date?
+    let month: String?
+    let day: String?
+    var reports: NSArray
+}
+
+extension ReportManager {
+    func getGroupedReports(period: ReportGroupEnum) -> [GroupedReport] {
+        var initial: [GroupedReport] {
+            return getStartAndEndDateChunksForPeriod(period).map{ tuple in
+                
+                return GroupedReport(
+                    from: (tuple as! [Date?])[0],
+                    to: (tuple as! [Date?])[1],
+                    month: (tuple as! [Date?])[1]?.monthName(),
+                    day: period == .week ? (tuple as! [Date?])[1]?.dayName() : nil,
+                    reports: NSArray()
+                )
+            }
+        }
+        var result = NSMutableArray(array: initial)
+        let reports = getReportsForPeriod(period)
+        let periodChunks = getStartAndEndDateChunksForPeriod(period)
+        for report in reports {
+            let index = getGroupIndexInPeriodChunkForReport(periodChunks: periodChunks as! [[Date?]], report: report)
+            if (index > -1) {
+                let groupedReport = (result as! [GroupedReport])[index]
+                var r = NSMutableArray(array: (result as! [GroupedReport])[index].reports)
+                r.add(report)
+                let newGroupedReport = GroupedReport(from: groupedReport.from, to: groupedReport.to, month: groupedReport.month, day: groupedReport.day, reports: r)
+                result[index] = newGroupedReport
+            }
+        }
+        return result as! [GroupedReport]
+    }
+    
+    private func getGroupCount(_ period: ReportGroupEnum) -> Int{
+        switch period {
+        case .day: return 4
+        case .week: return 7
+        case .month: return 5
+        case .threeMonths: return 6
+        case .sixMonths: return 6
+        case .oneYear: return 12
+        }
+    }
+    
+    func getStartAndEndDateChunksForPeriod(_ period: ReportGroupEnum) -> NSMutableArray {
+        let now = Calendar.current.dateComponents(in: .current, from: Date())
+        let groupCount = getGroupCount(period)
+        switch period {
+        // Date since 12:00 AM yesterday
+        case .day: return makeChunks(numberOfHours: Double(now.hour!), numberOfDays: 1, totalChunks: Double(groupCount))
+        case .week: return makeChunks(numberOfDays: 7, totalChunks: Double(groupCount))
+        case .month: return makeChunks(numberOfDays: 30, totalChunks: Double(groupCount))
+        case .threeMonths: return makeChunks(numberOfDays: 30 * 3, totalChunks: Double(groupCount))
+        case .sixMonths: return makeChunks(numberOfDays: 30 * 6, totalChunks: Double(groupCount))
+        case .oneYear: return makeChunks(numberOfDays: 365, totalChunks: Double(groupCount))
+        }
+    }
+    
+    private func makeChunks(numberOfHours: Double? = 24, numberOfDays: Double, totalChunks: Double) -> NSMutableArray {
+        let res = NSMutableArray()
+        let totalHours = (24 * numberOfDays)
+        let hourChunk = totalHours/totalChunks
+        var tuple = NSMutableArray()
+        let secondsElapsed = -(60 * 60 * numberOfHours! * numberOfDays)
+        var startDate = Date.init(timeIntervalSinceNow: TimeInterval(secondsElapsed))
+        for _ in stride(from: hourChunk, through: totalHours, by: hourChunk) {
+            let endDate: Date = Date(timeIntervalSinceNow: startDate.timeIntervalSinceNow + Double((60 * 60 * hourChunk)))
+            tuple.add(startDate)
+            tuple.add(endDate)
+            if tuple.count == 2 {
+                res.add(tuple)
+                tuple = NSMutableArray()
+            }
+            startDate = endDate
+        }
+        return res
+    }
+    
+    // Given a StartAndEndDateChunksForPeriod, find the index in the chunk that the report belongs to
+    private func getGroupIndexInPeriodChunkForReport(periodChunks: [[Date?]], report: Report) -> Int {
+        for (index, chunk) in periodChunks.enumerated() {
+            guard let end = chunk[1] else { return -1 }
+            let comparisonResult = report.endDate?.compare(end)
+            if comparisonResult == .orderedAscending || comparisonResult == .orderedSame { return index }
+        }
+        return -1
+    }
+    
+    private func getReportsForPeriod(_ period: ReportGroupEnum) -> [Report] {
+        let dateChunks = getStartAndEndDateChunksForPeriod(period)
+        let start = (dateChunks[0] as! [Date])[0], end = Date.init()
+        return getReports(from: start, to: end)
     }
 }

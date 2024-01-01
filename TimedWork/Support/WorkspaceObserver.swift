@@ -182,7 +182,7 @@ class WorkspaceObserver: NSObject {
 }
 
 
-// Mark:- Utils
+// MARK: - Utils
 extension WorkspaceObserver {
     private func encodeData(data: PrefData) -> Data? {
         do {
@@ -201,7 +201,7 @@ extension WorkspaceObserver {
         do {
             let unarchivedData = try NSKeyedUnarchiver.unarchivedObject(ofClass: PrefData.self, from: data!)
             return unarchivedData?.dict
-        }catch {
+        } catch {
             let nserror = error as NSError
             print(nserror)
             return nil
