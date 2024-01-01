@@ -18,6 +18,10 @@ class MainAppMenuViewController: NSViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(onEntityChanged(notification:)), name: .activityDeleted, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(onEntityChanged(notification:)), name: .activityCreated, object: nil)
     }
+
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
     
     @IBAction private func onEntityChanged(notification: Notification) {
         collectionView.reloadData()

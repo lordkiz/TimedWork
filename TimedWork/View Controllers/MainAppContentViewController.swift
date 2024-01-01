@@ -36,4 +36,8 @@ class MainAppContentViewController: NSViewController {
             return
         }
     }
+
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
 }

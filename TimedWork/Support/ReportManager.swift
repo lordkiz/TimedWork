@@ -123,7 +123,7 @@ class ReportManager: NSObject {
 
 // MARK: - UTILS
 
-enum ReportGroupEnum: Int {
+enum ReportGroupPeriodEnum: Int {
     case day, week, month, threeMonths, sixMonths, oneYear
 }
 
@@ -133,10 +133,27 @@ struct GroupedReport {
     let month: String?
     let day: String?
     var reports: NSArray
+    func sum() -> Double {
+        (reports as! [Report]).lazy.map { report in
+            if (report.endDate == nil || report.startDate == nil) { return 0 }
+            return report.endDate!.timeIntervalSince(report.startDate!)
+        } .reduce(0, +)
+    }
 }
 
 extension ReportManager {
-    func getGroupedReports(period: ReportGroupEnum) -> [GroupedReport] {
+    func getGroupedReports(period: ReportGroupPeriodEnum) -> [GroupedReport] {
+        let reports = getReportsForPeriod(period)
+        return prepareGrouped(reports: reports, for: period)
+    }
+    
+    
+    func getReportsFor(activity: Activity, period: ReportGroupPeriodEnum) -> [GroupedReport] {
+        let reports = activity.reports
+        return prepareGrouped(reports: reports?.allObjects as? [Report] ?? [], for: period)
+    }
+    
+    private func prepareGrouped(reports: [Report], for period: ReportGroupPeriodEnum) -> [GroupedReport] {
         var initial: [GroupedReport] {
             return getStartAndEndDateChunksForPeriod(period).map{ tuple in
                 
@@ -150,7 +167,6 @@ extension ReportManager {
             }
         }
         var result = NSMutableArray(array: initial)
-        let reports = getReportsForPeriod(period)
         let periodChunks = getStartAndEndDateChunksForPeriod(period)
         for report in reports {
             let index = getGroupIndexInPeriodChunkForReport(periodChunks: periodChunks as! [[Date?]], report: report)
@@ -165,7 +181,7 @@ extension ReportManager {
         return result as! [GroupedReport]
     }
     
-    private func getGroupCount(_ period: ReportGroupEnum) -> Int{
+    private func getGroupCount(_ period: ReportGroupPeriodEnum) -> Int{
         switch period {
         case .day: return 4
         case .week: return 7
@@ -176,7 +192,7 @@ extension ReportManager {
         }
     }
     
-    func getStartAndEndDateChunksForPeriod(_ period: ReportGroupEnum) -> NSMutableArray {
+    func getStartAndEndDateChunksForPeriod(_ period: ReportGroupPeriodEnum) -> NSMutableArray {
         let now = Calendar.current.dateComponents(in: .current, from: Date())
         let groupCount = getGroupCount(period)
         switch period {
@@ -220,7 +236,7 @@ extension ReportManager {
         return -1
     }
     
-    private func getReportsForPeriod(_ period: ReportGroupEnum) -> [Report] {
+    private func getReportsForPeriod(_ period: ReportGroupPeriodEnum) -> [Report] {
         let dateChunks = getStartAndEndDateChunksForPeriod(period)
         let start = (dateChunks[0] as! [Date])[0], end = Date.init()
         return getReports(from: start, to: end)

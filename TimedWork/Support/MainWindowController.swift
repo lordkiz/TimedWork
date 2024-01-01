@@ -22,6 +22,10 @@ class MainWindowController: NSWindowController {
             window?.toolbar?.fullScreenAccessoryView?.needsLayout = true
         }
     }
+
+    deinit {
+        NSApplication.shared.removeObserver(self)
+    }
     
 }
 

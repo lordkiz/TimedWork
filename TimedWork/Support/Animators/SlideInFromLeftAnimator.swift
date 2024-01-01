@@ -22,6 +22,10 @@ private class BackgroundView: NSView {
         }
         NSApplication.shared.addObserver(self, forKeyPath: "effectiveAppearance",options: .new, context: nil)
     }
+
+    deinit {
+        NSApplication.shared.removeObserver(self)
+    }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
