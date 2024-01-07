@@ -24,7 +24,7 @@ class MainWindowController: NSWindowController {
     }
 
     deinit {
-        NSApplication.shared.removeObserver(self)
+        NSApplication.shared.removeObserver(self, forKeyPath: "effectiveAppearance")
     }
     
 }

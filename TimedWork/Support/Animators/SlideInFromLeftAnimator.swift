@@ -24,7 +24,7 @@ private class BackgroundView: NSView {
     }
 
     deinit {
-        NSApplication.shared.removeObserver(self)
+        NSApplication.shared.removeObserver(self, forKeyPath: "effectiveAppearance")
     }
     
     required init?(coder: NSCoder) {

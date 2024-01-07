@@ -123,8 +123,18 @@ class ReportManager: NSObject {
 
 // MARK: - UTILS
 
-enum ReportGroupPeriodEnum: Int {
+enum ReportGroupPeriodEnum: Int, CustomStringConvertible {
     case day, week, month, threeMonths, sixMonths, oneYear
+    var description: String {
+        switch self {
+        case .day: return "24 Hours"
+        case .week: return "One week"
+        case .month: return "One month"
+        case .threeMonths: return "Three months"
+        case .sixMonths: return "Six months"
+        case .oneYear: return "One year"
+        }
+    }
 }
 
 struct GroupedReport {

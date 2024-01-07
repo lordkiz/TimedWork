@@ -900,25 +900,148 @@
             <objects>
                 <viewController storyboardIdentifier="ActivityDetailViewController" id="Dbh-Jp-6Aa" customClass="ActivityDetailViewController" customModule="TimedWork" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="AxG-KN-NKC">
-                        <rect key="frame" x="0.0" y="0.0" width="510" height="431"/>
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="559"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="nGD-Qa-rTh">
-                                <rect key="frame" x="18" y="314" width="37" height="25"/>
+                            <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="hYN-vF-7EV">
+                                <rect key="frame" x="17" y="428" width="207" height="25"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="25" id="sLC-G5-Xg0"/>
+                                    <constraint firstAttribute="width" constant="200" id="8DJ-Cc-iBL"/>
+                                    <constraint firstAttribute="height" constant="20" id="cya-VS-G8M"/>
                                 </constraints>
-                                <textFieldCell key="cell" lineBreakMode="clipping" title="Label" id="utg-wP-CIE">
-                                    <font key="font" usesAppearanceFont="YES"/>
+                                <popUpButtonCell key="cell" type="push" title="24 Hours" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="z1Z-BD-Tgo" id="UAx-ik-ib2">
+                                    <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="menu"/>
+                                    <menu key="menu" id="NMo-CZ-mVa">
+                                        <items>
+                                            <menuItem title="24 Hours" state="on" id="z1Z-BD-Tgo">
+                                                <connections>
+                                                    <action selector="onOneDayClicked:" target="Dbh-Jp-6Aa" id="bSA-ei-mQg"/>
+                                                </connections>
+                                            </menuItem>
+                                            <menuItem title="One week" id="2Rk-2l-x28">
+                                                <connections>
+                                                    <action selector="onOneWeekClicked:" target="Dbh-Jp-6Aa" id="RkR-0F-KiP"/>
+                                                </connections>
+                                            </menuItem>
+                                            <menuItem title="One month" id="Y1j-EC-Km1">
+                                                <connections>
+                                                    <action selector="onOneMonthClicked:" target="Dbh-Jp-6Aa" id="fZY-nd-ZOJ"/>
+                                                </connections>
+                                            </menuItem>
+                                            <menuItem title="Three months" id="hgV-xm-8lg">
+                                                <modifierMask key="keyEquivalentModifierMask"/>
+                                                <connections>
+                                                    <action selector="onThreeMonthsClicked:" target="Dbh-Jp-6Aa" id="jOZ-Ry-tnv"/>
+                                                </connections>
+                                            </menuItem>
+                                            <menuItem title="Six months" id="Kpk-Xt-OIV">
+                                                <modifierMask key="keyEquivalentModifierMask"/>
+                                                <connections>
+                                                    <action selector="onSixMonthsClicked:" target="Dbh-Jp-6Aa" id="ssm-9e-9w1"/>
+                                                </connections>
+                                            </menuItem>
+                                            <menuItem title="One year" id="Vsu-iL-Nrp">
+                                                <modifierMask key="keyEquivalentModifierMask"/>
+                                                <connections>
+                                                    <action selector="onOneYearClicked:" target="Dbh-Jp-6Aa" id="WDK-sg-cOg"/>
+                                                </connections>
+                                            </menuItem>
+                                        </items>
+                                    </menu>
+                                </popUpButtonCell>
+                            </popUpButton>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="nA3-ct-ng9">
+                                <rect key="frame" x="597" y="418.5" width="50.5" height="56.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="06r-vy-SvM"/>
+                                    <constraint firstAttribute="height" constant="50" id="yRw-Ic-FD9"/>
+                                </constraints>
+                                <buttonCell key="cell" type="roundTextured" title="Textured Rounded" bezelStyle="texturedRounded" image="pencil" catalog="system" imagePosition="only" alignment="center" lineBreakMode="truncatingTail" state="on" imageScaling="proportionallyDown" inset="2" id="pNM-Uq-amO">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" textStyle="largeTitle" name=".SFNS-Regular"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="onEditClick:" target="Dbh-Jp-6Aa" id="4xF-XG-SSa"/>
+                                </connections>
+                            </button>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="nGD-Qa-rTh">
+                                <rect key="frame" x="190" y="417" width="404" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="400" id="oJi-gw-FzG"/>
+                                    <constraint firstAttribute="height" constant="50" id="sLC-G5-Xg0"/>
+                                </constraints>
+                                <textFieldCell key="cell" lineBreakMode="clipping" alignment="right" title="Label" id="utg-wP-CIE">
+                                    <font key="font" textStyle="largeTitle" name=".SFNS-Regular"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="ACE-bt-uOa" customClass="PieChartView" customModule="TimedWork" customModuleProvider="target">
+                                <rect key="frame" x="20" y="247" width="200" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="6HG-z2-v5s"/>
+                                    <constraint firstAttribute="height" constant="150" id="k9i-0g-lZx"/>
+                                </constraints>
+                            </customView>
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="K53-Jg-2u6" customClass="BarChartView" customModule="TimedWork" customModuleProvider="target">
+                                <rect key="frame" x="260" y="247" width="387" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" id="97N-dO-cZ4"/>
+                                    <constraint firstAttribute="height" constant="150" id="pbR-jN-2tQ"/>
+                                </constraints>
+                            </customView>
                             <box verticalHuggingPriority="750" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="6U7-BJ-RCg">
-                                <rect key="frame" x="0.0" y="81" width="510" height="5"/>
+                                <rect key="frame" x="0.0" y="224" width="667" height="5"/>
+                            </box>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="E1e-q9-FjO">
+                                <rect key="frame" x="18" y="200" width="162" height="16"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Apps tracking this activity" id="8Fb-bw-YRs">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <scrollView horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" hasVerticalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gTZ-Qu-EqE" userLabel="ReportersScrollview">
+                                <rect key="frame" x="20" y="90" width="627" height="100"/>
+                                <clipView key="contentView" drawsBackground="NO" id="WGQ-YA-QMf">
+                                    <rect key="frame" x="1" y="1" width="625" height="98"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <view id="sgd-7p-Kwo">
+                                            <rect key="frame" x="0.0" y="0.0" width="610" height="83"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <subviews>
+                                                <stackView orientation="horizontal" alignment="centerY" spacing="10" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lP7-tz-eTn">
+                                                    <rect key="frame" x="0.0" y="0.0" width="610" height="83"/>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="lP7-tz-eTn" firstAttribute="top" secondItem="sgd-7p-Kwo" secondAttribute="top" id="43k-8K-cTT"/>
+                                                <constraint firstAttribute="trailing" secondItem="lP7-tz-eTn" secondAttribute="trailing" id="5SZ-Wv-Pdh"/>
+                                                <constraint firstItem="lP7-tz-eTn" firstAttribute="leading" secondItem="sgd-7p-Kwo" secondAttribute="leading" id="crQ-Qm-Wph"/>
+                                                <constraint firstAttribute="bottom" secondItem="lP7-tz-eTn" secondAttribute="bottom" id="zLe-Tr-4vo"/>
+                                            </constraints>
+                                        </view>
+                                    </subviews>
+                                </clipView>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="aGP-dA-5qb"/>
+                                </constraints>
+                                <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="P0c-F6-nrl">
+                                    <rect key="frame" x="-100" y="-100" width="181" height="16"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                                <scroller key="verticalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="aG5-wc-N45">
+                                    <rect key="frame" x="-100" y="-100" width="16" height="94"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                            </scrollView>
+                            <box verticalHuggingPriority="750" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="Fd0-jQ-7hW" userLabel="Horizontal Line Two">
+                                <rect key="frame" x="0.0" y="77" width="667" height="5"/>
                             </box>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="f1y-xH-KoS">
-                                <rect key="frame" x="373" y="36" width="124" height="32"/>
+                                <rect key="frame" x="530" y="32" width="124" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="5vC-eN-YzF"/>
                                     <constraint firstAttribute="width" constant="110" id="F2O-84-5D5"/>
@@ -929,53 +1052,34 @@
                                 </buttonCell>
                                 <color key="bezelColor" name="systemRedColor" catalog="System" colorSpace="catalog"/>
                             </button>
-                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="rTl-dm-hl7">
-                                <rect key="frame" x="253" y="36" width="124" height="32"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="20" id="JWl-7T-Grb"/>
-                                    <constraint firstAttribute="width" constant="110" id="pqk-DT-9Sy"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="110" id="s1m-k1-B3d"/>
-                                </constraints>
-                                <buttonCell key="cell" type="push" title="Edit Activity" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="XHg-BC-OsU">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                                <color key="bezelColor" name="AccentColor"/>
-                            </button>
-                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="ACE-bt-uOa" customClass="PieChartView" customModule="TimedWork" customModuleProvider="target">
-                                <rect key="frame" x="20" y="144" width="200" height="150"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="6HG-z2-v5s"/>
-                                    <constraint firstAttribute="height" constant="150" id="k9i-0g-lZx"/>
-                                </constraints>
-                            </customView>
-                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="K53-Jg-2u6" customClass="BarChartView" customModule="TimedWork" customModuleProvider="target">
-                                <rect key="frame" x="260" y="144" width="230" height="150"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" id="97N-dO-cZ4"/>
-                                    <constraint firstAttribute="height" constant="150" id="pbR-jN-2tQ"/>
-                                </constraints>
-                            </customView>
                         </subviews>
                         <constraints>
                             <constraint firstItem="K53-Jg-2u6" firstAttribute="leading" secondItem="ACE-bt-uOa" secondAttribute="trailing" constant="40" id="0Pd-QY-ucF"/>
-                            <constraint firstItem="BdH-V7-WiD" firstAttribute="bottom" secondItem="f1y-xH-KoS" secondAttribute="bottom" constant="23" id="6Ii-oO-k4t"/>
-                            <constraint firstItem="nGD-Qa-rTh" firstAttribute="leading" secondItem="BdH-V7-WiD" secondAttribute="leading" id="BR0-lX-q9S"/>
-                            <constraint firstItem="f1y-xH-KoS" firstAttribute="top" secondItem="6U7-BJ-RCg" secondAttribute="bottom" constant="20" id="DZu-fP-Kv5"/>
+                            <constraint firstAttribute="trailing" secondItem="Fd0-jQ-7hW" secondAttribute="trailing" id="3S2-zf-PcJ"/>
+                            <constraint firstItem="nA3-ct-ng9" firstAttribute="centerY" secondItem="nGD-Qa-rTh" secondAttribute="centerY" constant="-5" id="ALh-gI-6YK"/>
+                            <constraint firstItem="nGD-Qa-rTh" firstAttribute="trailing" secondItem="nA3-ct-ng9" secondAttribute="leading" constant="-5" id="BR0-lX-q9S"/>
+                            <constraint firstItem="f1y-xH-KoS" firstAttribute="top" secondItem="Fd0-jQ-7hW" secondAttribute="bottom" constant="20" id="DbD-ho-2ah"/>
                             <constraint firstItem="K53-Jg-2u6" firstAttribute="trailing" secondItem="BdH-V7-WiD" secondAttribute="trailing" id="Edb-Sf-Fq0"/>
-                            <constraint firstItem="f1y-xH-KoS" firstAttribute="leading" secondItem="rTl-dm-hl7" secondAttribute="trailing" constant="10" id="K8o-JV-c9e"/>
+                            <constraint firstItem="nA3-ct-ng9" firstAttribute="leading" secondItem="nGD-Qa-rTh" secondAttribute="trailing" constant="5" id="I0U-s7-ZAT"/>
                             <constraint firstItem="nGD-Qa-rTh" firstAttribute="top" secondItem="BdH-V7-WiD" secondAttribute="top" constant="20" id="KqV-7C-oQF"/>
                             <constraint firstItem="BdH-V7-WiD" firstAttribute="trailing" secondItem="f1y-xH-KoS" secondAttribute="trailing" id="ME0-gQ-P1g"/>
-                            <constraint firstItem="f1y-xH-KoS" firstAttribute="leading" secondItem="rTl-dm-hl7" secondAttribute="trailing" constant="10" id="RxG-Ia-d1Y"/>
+                            <constraint firstItem="hYN-vF-7EV" firstAttribute="leading" secondItem="BdH-V7-WiD" secondAttribute="leading" id="MNi-sG-cPz"/>
+                            <constraint firstItem="E1e-q9-FjO" firstAttribute="leading" secondItem="BdH-V7-WiD" secondAttribute="leading" id="TRg-ta-T4l"/>
                             <constraint firstItem="ACE-bt-uOa" firstAttribute="top" secondItem="nGD-Qa-rTh" secondAttribute="bottom" constant="20" id="TS4-lj-IsX"/>
-                            <constraint firstItem="f1y-xH-KoS" firstAttribute="top" secondItem="6U7-BJ-RCg" secondAttribute="bottom" constant="20" id="Ubz-Ew-Y9s"/>
-                            <constraint firstItem="6U7-BJ-RCg" firstAttribute="top" secondItem="ACE-bt-uOa" secondAttribute="bottom" constant="60" id="aMZ-Bo-3sE"/>
+                            <constraint firstItem="6U7-BJ-RCg" firstAttribute="top" secondItem="K53-Jg-2u6" secondAttribute="bottom" constant="20" id="VnO-5F-XJ0"/>
+                            <constraint firstItem="6U7-BJ-RCg" firstAttribute="leading" secondItem="AxG-KN-NKC" secondAttribute="leading" id="W1R-2p-rmm"/>
+                            <constraint firstItem="f1y-xH-KoS" firstAttribute="trailing" secondItem="BdH-V7-WiD" secondAttribute="trailing" id="XW2-eG-evv"/>
+                            <constraint firstItem="Fd0-jQ-7hW" firstAttribute="leading" secondItem="AxG-KN-NKC" secondAttribute="leading" id="XaQ-2B-Ekt"/>
                             <constraint firstItem="K53-Jg-2u6" firstAttribute="top" secondItem="nGD-Qa-rTh" secondAttribute="bottom" constant="20" id="g96-cu-FvX"/>
-                            <constraint firstItem="6U7-BJ-RCg" firstAttribute="top" secondItem="K53-Jg-2u6" secondAttribute="bottom" constant="60" id="hAc-9d-Bgi"/>
-                            <constraint firstAttribute="trailing" secondItem="6U7-BJ-RCg" secondAttribute="trailing" id="nzR-2F-5gM"/>
+                            <constraint firstItem="hYN-vF-7EV" firstAttribute="centerY" secondItem="nGD-Qa-rTh" secondAttribute="centerY" id="hfc-Nc-bYi"/>
+                            <constraint firstItem="Fd0-jQ-7hW" firstAttribute="top" secondItem="gTZ-Qu-EqE" secondAttribute="bottom" constant="10" id="jyq-qf-07f"/>
+                            <constraint firstItem="BdH-V7-WiD" firstAttribute="trailing" secondItem="nA3-ct-ng9" secondAttribute="trailing" id="lIS-JW-Udr"/>
                             <constraint firstItem="ACE-bt-uOa" firstAttribute="leading" secondItem="BdH-V7-WiD" secondAttribute="leading" id="o6f-KO-doq"/>
-                            <constraint firstItem="6U7-BJ-RCg" firstAttribute="leading" secondItem="AxG-KN-NKC" secondAttribute="leading" id="wCk-Ej-vrE"/>
-                            <constraint firstItem="rTl-dm-hl7" firstAttribute="top" secondItem="6U7-BJ-RCg" secondAttribute="bottom" constant="20" id="zHt-Yg-if8"/>
+                            <constraint firstItem="E1e-q9-FjO" firstAttribute="top" secondItem="6U7-BJ-RCg" secondAttribute="bottom" constant="10" id="pMh-US-pH1"/>
+                            <constraint firstAttribute="trailing" secondItem="6U7-BJ-RCg" secondAttribute="trailing" id="svh-P4-eZw"/>
+                            <constraint firstItem="gTZ-Qu-EqE" firstAttribute="top" secondItem="E1e-q9-FjO" secondAttribute="bottom" constant="10" id="tBq-CL-CPi"/>
+                            <constraint firstItem="BdH-V7-WiD" firstAttribute="trailing" secondItem="gTZ-Qu-EqE" secondAttribute="trailing" id="wd5-c0-hbp"/>
+                            <constraint firstItem="gTZ-Qu-EqE" firstAttribute="leading" secondItem="BdH-V7-WiD" secondAttribute="leading" id="z30-Wb-dZA"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="z92-Hb-6Gb"/>
                         <viewLayoutGuide key="layoutMargins" id="BdH-V7-WiD"/>
@@ -984,16 +1088,19 @@
                         <outlet property="activityNameTextLabel" destination="nGD-Qa-rTh" id="ihe-UP-aLv"/>
                         <outlet property="barChartView" destination="K53-Jg-2u6" id="jik-gB-fkI"/>
                         <outlet property="deleteButton" destination="f1y-xH-KoS" id="f3K-Ab-Bj6"/>
-                        <outlet property="editButton" destination="rTl-dm-hl7" id="VTj-DN-1dR"/>
+                        <outlet property="durationSelectButton" destination="hYN-vF-7EV" id="x9i-iN-cMA"/>
+                        <outlet property="editLabelButton" destination="nA3-ct-ng9" id="xXE-vW-dCs"/>
                         <outlet property="pieChartView" destination="ACE-bt-uOa" id="Xte-Q3-oc8"/>
+                        <outlet property="reportersStackView" destination="lP7-tz-eTn" id="TQO-0U-MmL"/>
                     </connections>
                 </viewController>
                 <customObject id="CKq-l1-Ivr" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-940.5" y="2213.5"/>
+            <point key="canvasLocation" x="-1134.5" y="2213"/>
         </scene>
     </scenes>
     <resources>
+        <image name="pencil" catalog="system" width="14" height="13"/>
         <namedColor name="AccentColor">
             <color red="0.94509803921568625" green="0.91764705882352937" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

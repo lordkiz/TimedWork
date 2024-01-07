@@ -10,7 +10,7 @@ import Cocoa
 @IBDesignable
 class BarChartView: NSView {
 
-    var data = [BarChartData]() {
+    var data = [ChartData]() {
         didSet {
             setNeedsDisplay(bounds)
         }
@@ -67,7 +67,6 @@ class BarChartView: NSView {
         guard let context = NSGraphicsContext.current?.cgContext else { return }
         
         forEachHorizontalLine { startPoint, endPoint in
-            print(startPoint)
             context.setStrokeColor(.init(red: 169/255, green: 169/255, blue: 169/255, alpha: 0.5))
             context.setLineWidth(1)
             context.move(to: startPoint)
@@ -94,13 +93,12 @@ class BarChartView: NSView {
         
     }
     
-    func forEachBar(_ body: (BarChartData, _ startPoint: CGPoint, _ highestPoint: CGPoint, _ endPoint: CGPoint) -> Void) {
+    func forEachBar(_ body: (ChartData, _ startPoint: CGPoint, _ highestPoint: CGPoint, _ endPoint: CGPoint) -> Void) {
         guard let tallestValue = data.map({ $0.value }).max() else { return }
         
         var startPoint = CGPointMake(bounds.minX + spaceBetweenBars, bounds.minY)
         
         for bar in data {
-            print("Bar \(bar)")
             let ratio = (bar.value/tallestValue)
             let highestPoint = CGPointMake(startPoint.x, bounds.maxY * ratio)
             let endPoint = CGPointMake(startPoint.x + barWidth, startPoint.y)

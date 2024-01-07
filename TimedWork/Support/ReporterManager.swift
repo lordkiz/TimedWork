@@ -49,3 +49,15 @@ class ReporterManager: NSObject {
         return reporter
     }
 }
+
+
+extension Reporter {
+    func getIcon() -> NSImage? {
+        guard let url = self.appUrl == nil ? nil : URL(string: self.appUrl!) else { return nil }
+        if #available(macOS 13.0, *) {
+            return NSWorkspace.shared.icon(forFile: url.path(percentEncoded: false))
+        } else {
+            return NSWorkspace.shared.icon(forFile: url.path)
+        }
+    }
+}

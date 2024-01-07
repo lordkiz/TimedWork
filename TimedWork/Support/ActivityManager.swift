@@ -7,6 +7,11 @@
 
 import Cocoa
 
+struct PermittedActivityFields {
+    let name: String
+}
+
+
 class ActivityManager: NSObject {
     static let shared: ActivityManager = ActivityManager()
     
@@ -90,6 +95,21 @@ class ActivityManager: NSObject {
             }
         }
         return false
+    }
+    
+    func update(activity: Activity, values: PermittedActivityFields) -> Activity? {
+        if values.name.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty { return nil }
+        activity.name = values.name
+        do {
+            
+            let viewContext = (NSApplication.shared.delegate as? AppDelegate)!.persistentContainer.viewContext
+            try viewContext.save()
+            return activity
+        } catch {
+            // TODO
+            print("error updating report")
+            return nil
+        }
     }
     
     func deleteActivity(objectID: NSManagedObjectID) -> Bool {

@@ -44,13 +44,15 @@
 		46FE221A2B387BAE00503092 /* ActivityDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46FE22192B387BAE00503092 /* ActivityDetailViewController.swift */; };
 		46FE221C2B38827400503092 /* Notification+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46FE221B2B38827400503092 /* Notification+Extensions.swift */; };
 		46FE221E2B38874700503092 /* SidebarItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46FE221D2B38874700503092 /* SidebarItemView.swift */; };
-		46FE22232B3B40D300503092 /* PieChartData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46FE22222B3B40D300503092 /* PieChartData.swift */; };
 		46FE22252B3B41EB00503092 /* PieChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46FE22242B3B41EB00503092 /* PieChartView.swift */; };
 		46FE22272B3B498A00503092 /* NSView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46FE22262B3B498A00503092 /* NSView+Extensions.swift */; };
-		46FE222B2B3B520200503092 /* BarChartData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46FE222A2B3B520200503092 /* BarChartData.swift */; };
 		46FE222D2B3B527100503092 /* BarChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46FE222C2B3B527100503092 /* BarChartView.swift */; };
 		46FE222F2B3C64B800503092 /* WorkspaceObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46FE222E2B3C64B800503092 /* WorkspaceObserver.swift */; };
 		46FE22312B41BAC800503092 /* NSDate+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46FE22302B41BAC800503092 /* NSDate+Extensions.swift */; };
+		46FE22352B4ABFA300503092 /* LabelFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46FE22342B4ABFA300503092 /* LabelFormatter.swift */; };
+		46FE22372B4AC05200503092 /* ChartData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46FE22362B4AC05200503092 /* ChartData.swift */; };
+		46FE22392B4AC1D200503092 /* NumberFormatter+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46FE22382B4AC1D200503092 /* NumberFormatter+Extensions.swift */; };
+		46FE223B2B4AF3BC00503092 /* CGPoint+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46FE223A2B4AF3BC00503092 /* CGPoint+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -112,13 +114,15 @@
 		46FE22192B387BAE00503092 /* ActivityDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityDetailViewController.swift; sourceTree = "<group>"; };
 		46FE221B2B38827400503092 /* Notification+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification+Extensions.swift"; sourceTree = "<group>"; };
 		46FE221D2B38874700503092 /* SidebarItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarItemView.swift; sourceTree = "<group>"; };
-		46FE22222B3B40D300503092 /* PieChartData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieChartData.swift; sourceTree = "<group>"; };
 		46FE22242B3B41EB00503092 /* PieChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieChartView.swift; sourceTree = "<group>"; };
 		46FE22262B3B498A00503092 /* NSView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSView+Extensions.swift"; sourceTree = "<group>"; };
-		46FE222A2B3B520200503092 /* BarChartData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarChartData.swift; sourceTree = "<group>"; };
 		46FE222C2B3B527100503092 /* BarChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarChartView.swift; sourceTree = "<group>"; };
 		46FE222E2B3C64B800503092 /* WorkspaceObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkspaceObserver.swift; sourceTree = "<group>"; };
 		46FE22302B41BAC800503092 /* NSDate+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSDate+Extensions.swift"; sourceTree = "<group>"; };
+		46FE22342B4ABFA300503092 /* LabelFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelFormatter.swift; sourceTree = "<group>"; };
+		46FE22362B4AC05200503092 /* ChartData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartData.swift; sourceTree = "<group>"; };
+		46FE22382B4AC1D200503092 /* NumberFormatter+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NumberFormatter+Extensions.swift"; sourceTree = "<group>"; };
+		46FE223A2B4AF3BC00503092 /* CGPoint+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGPoint+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -263,6 +267,8 @@
 				46FE221B2B38827400503092 /* Notification+Extensions.swift */,
 				46FE22262B3B498A00503092 /* NSView+Extensions.swift */,
 				46FE22302B41BAC800503092 /* NSDate+Extensions.swift */,
+				46FE22382B4AC1D200503092 /* NumberFormatter+Extensions.swift */,
+				46FE223A2B4AF3BC00503092 /* CGPoint+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -290,6 +296,8 @@
 			children = (
 				46FE22292B3B51E200503092 /* BarChart */,
 				46FE22202B3B406500503092 /* PieChart */,
+				46FE22342B4ABFA300503092 /* LabelFormatter.swift */,
+				46FE22362B4AC05200503092 /* ChartData.swift */,
 			);
 			path = Charts;
 			sourceTree = "<group>";
@@ -297,7 +305,6 @@
 		46FE22202B3B406500503092 /* PieChart */ = {
 			isa = PBXGroup;
 			children = (
-				46FE22222B3B40D300503092 /* PieChartData.swift */,
 				46FE22242B3B41EB00503092 /* PieChartView.swift */,
 			);
 			path = PieChart;
@@ -306,7 +313,6 @@
 		46FE22292B3B51E200503092 /* BarChart */ = {
 			isa = PBXGroup;
 			children = (
-				46FE222A2B3B520200503092 /* BarChartData.swift */,
 				46FE222C2B3B527100503092 /* BarChartView.swift */,
 			);
 			path = BarChart;
@@ -452,7 +458,6 @@
 				46DBCF002B36033000323348 /* ReportManager.swift in Sources */,
 				46D1D6862B0D3DDA00E7B31D /* FadeInAnimator.swift in Sources */,
 				46B1D5032B08B8010091E1A9 /* AppDelegate.swift in Sources */,
-				46FE22232B3B40D300503092 /* PieChartData.swift in Sources */,
 				46FE22252B3B41EB00503092 /* PieChartView.swift in Sources */,
 				46F8FC392B24566F003153BE /* SidebarHeaderView.swift in Sources */,
 				46DBCF022B36035700323348 /* ReporterManager.swift in Sources */,
@@ -461,11 +466,11 @@
 				46D1D6882B0D5D6100E7B31D /* SlideInFromLeftAnimator.swift in Sources */,
 				46FE221A2B387BAE00503092 /* ActivityDetailViewController.swift in Sources */,
 				46D1D69C2B0EB3D200E7B31D /* NSToolbar+Extensions.swift in Sources */,
-				46FE222B2B3B520200503092 /* BarChartData.swift in Sources */,
 				46DBCF0D2B37109700323348 /* ToolbarBackButtonDelegate.swift in Sources */,
 				46D1D6972B0EA75500E7B31D /* MainWindowController.swift in Sources */,
 				46F8FC3E2B246E9E003153BE /* MainAppMenuViewController.swift in Sources */,
 				46D1D6A02B12643600E7B31D /* SetupData.swift in Sources */,
+				46FE223B2B4AF3BC00503092 /* CGPoint+Extensions.swift in Sources */,
 				46F8FC362B244751003153BE /* Sidebar.swift in Sources */,
 				46B1D5082B08B8010091E1A9 /* TimedWork.xcdatamodeld in Sources */,
 				46F8FC202B1CE4E1003153BE /* ActivityManager.swift in Sources */,
@@ -474,6 +479,7 @@
 				46DBCEF82B32DAF600323348 /* CreateActivityViewController.swift in Sources */,
 				46FE222F2B3C64B800503092 /* WorkspaceObserver.swift in Sources */,
 				46F8FC332B244341003153BE /* SidebarCollectionViewItem.swift in Sources */,
+				46FE22392B4AC1D200503092 /* NumberFormatter+Extensions.swift in Sources */,
 				46F8FC282B1DB2C7003153BE /* NSImage+Extensions.swift in Sources */,
 				46FE22272B3B498A00503092 /* NSView+Extensions.swift in Sources */,
 				46FE221E2B38874700503092 /* SidebarItemView.swift in Sources */,
@@ -481,6 +487,8 @@
 				46D1D6AF2B15C47400E7B31D /* InstalledApp.swift in Sources */,
 				46F8FC3C2B246CBD003153BE /* MainAppViewController.swift in Sources */,
 				46FE222D2B3B527100503092 /* BarChartView.swift in Sources */,
+				46FE22372B4AC05200503092 /* ChartData.swift in Sources */,
+				46FE22352B4ABFA300503092 /* LabelFormatter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

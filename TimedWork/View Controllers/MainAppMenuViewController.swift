@@ -17,6 +17,7 @@ class MainAppMenuViewController: NSViewController {
         configureCollectionView()
         NotificationCenter.default.addObserver(self, selector: #selector(onEntityChanged(notification:)), name: .activityDeleted, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(onEntityChanged(notification:)), name: .activityCreated, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(onEntityChanged(notification:)), name: .activityUpdated, object: nil)
     }
 
     deinit {

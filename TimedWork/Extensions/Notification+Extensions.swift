@@ -12,4 +12,5 @@ extension Notification.Name {
     static let toolbarItem = Notification.Name("toolbarItem")
     static let activityDeleted = Notification.Name("activityDeleted")
     static let activityCreated = Notification.Name("activityCreated")
+    static let activityUpdated = Notification.Name("activityUpdated")
 }
