@@ -22,6 +22,10 @@ struct ChartData: Comparable {
     // value of the segment
     var value: Double
     
+    func labelFormatter(formatter: @escaping (_: Double) -> String) -> String {
+        return formatter(value)
+    }
+    
     static func < (lhs: ChartData, rhs: ChartData) -> Bool {
         return lhs.value < rhs.value
     }

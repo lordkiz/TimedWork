@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		463BB9232B4F565000F89ACA /* HorizontalLeaderBarsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463BB9222B4F565000F89ACA /* HorizontalLeaderBarsView.swift */; };
+		463BB9252B4F6E5500F89ACA /* TimeInterval+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463BB9242B4F6E5500F89ACA /* TimeInterval+Extensions.swift */; };
+		463BB9272B4F73FD00F89ACA /* ChartLabelFormatterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463BB9262B4F73FD00F89ACA /* ChartLabelFormatterDelegate.swift */; };
 		46B1D5032B08B8010091E1A9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B1D5022B08B8010091E1A9 /* AppDelegate.swift */; };
 		46B1D5082B08B8010091E1A9 /* TimedWork.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 46B1D5062B08B8010091E1A9 /* TimedWork.xcdatamodeld */; };
 		46B1D50A2B08B8020091E1A9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46B1D5092B08B8020091E1A9 /* Assets.xcassets */; };
@@ -53,6 +56,13 @@
 		46FE22372B4AC05200503092 /* ChartData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46FE22362B4AC05200503092 /* ChartData.swift */; };
 		46FE22392B4AC1D200503092 /* NumberFormatter+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46FE22382B4AC1D200503092 /* NumberFormatter+Extensions.swift */; };
 		46FE223B2B4AF3BC00503092 /* CGPoint+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46FE223A2B4AF3BC00503092 /* CGPoint+Extensions.swift */; };
+		46FE223E2B4B2D5D00503092 /* MonthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46FE223D2B4B2D5D00503092 /* MonthView.swift */; };
+		46FE22402B4B314200503092 /* WeekView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46FE223F2B4B314200503092 /* WeekView.swift */; };
+		46FE22422B4B31C100503092 /* DayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46FE22412B4B31C100503092 /* DayView.swift */; };
+		46FE22462B4D6CBB00503092 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46FE22452B4D6CBB00503092 /* CalendarView.swift */; };
+		46FE22482B4D72A700503092 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46FE22472B4D72A700503092 /* DashboardViewController.swift */; };
+		46FE224A2B4ED17400503092 /* CalendarDayViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46FE22492B4ED17400503092 /* CalendarDayViewDelegate.swift */; };
+		46FE224C2B4ED2C000503092 /* CalendarViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46FE224B2B4ED2C000503092 /* CalendarViewDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +83,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		463BB9222B4F565000F89ACA /* HorizontalLeaderBarsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalLeaderBarsView.swift; sourceTree = "<group>"; };
+		463BB9242B4F6E5500F89ACA /* TimeInterval+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TimeInterval+Extensions.swift"; sourceTree = "<group>"; };
+		463BB9262B4F73FD00F89ACA /* ChartLabelFormatterDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartLabelFormatterDelegate.swift; sourceTree = "<group>"; };
 		46B1D4FF2B08B8010091E1A9 /* TimedWork.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TimedWork.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		46B1D5022B08B8010091E1A9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		46B1D5072B08B8010091E1A9 /* TimedWork.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TimedWork.xcdatamodel; sourceTree = "<group>"; };
@@ -123,6 +136,13 @@
 		46FE22362B4AC05200503092 /* ChartData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartData.swift; sourceTree = "<group>"; };
 		46FE22382B4AC1D200503092 /* NumberFormatter+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NumberFormatter+Extensions.swift"; sourceTree = "<group>"; };
 		46FE223A2B4AF3BC00503092 /* CGPoint+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGPoint+Extensions.swift"; sourceTree = "<group>"; };
+		46FE223D2B4B2D5D00503092 /* MonthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthView.swift; sourceTree = "<group>"; };
+		46FE223F2B4B314200503092 /* WeekView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekView.swift; sourceTree = "<group>"; };
+		46FE22412B4B31C100503092 /* DayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayView.swift; sourceTree = "<group>"; };
+		46FE22452B4D6CBB00503092 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
+		46FE22472B4D72A700503092 /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
+		46FE22492B4ED17400503092 /* CalendarDayViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDayViewDelegate.swift; sourceTree = "<group>"; };
+		46FE224B2B4ED2C000503092 /* CalendarViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +170,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		463BB9212B4F55F100F89ACA /* HorizontalLeaderBars */ = {
+			isa = PBXGroup;
+			children = (
+				463BB9222B4F565000F89ACA /* HorizontalLeaderBarsView.swift */,
+			);
+			path = HorizontalLeaderBars;
+			sourceTree = "<group>";
+		};
 		46B1D4F62B08B8000091E1A9 = {
 			isa = PBXGroup;
 			children = (
@@ -221,6 +249,7 @@
 				46F8FC3F2B246EBB003153BE /* MainAppContentViewController.swift */,
 				46DBCEF72B32DAF600323348 /* CreateActivityViewController.swift */,
 				46FE22192B387BAE00503092 /* ActivityDetailViewController.swift */,
+				46FE22472B4D72A700503092 /* DashboardViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -245,6 +274,7 @@
 		46D1D67C2B0A61E000E7B31D /* Support */ = {
 			isa = PBXGroup;
 			children = (
+				46FE223C2B4B2CD000503092 /* Calendar */,
 				46FE221F2B3B405300503092 /* Charts */,
 				46D1D6842B0D3DB500E7B31D /* Animators */,
 				46B1D5022B08B8010091E1A9 /* AppDelegate.swift */,
@@ -269,6 +299,7 @@
 				46FE22302B41BAC800503092 /* NSDate+Extensions.swift */,
 				46FE22382B4AC1D200503092 /* NumberFormatter+Extensions.swift */,
 				46FE223A2B4AF3BC00503092 /* CGPoint+Extensions.swift */,
+				463BB9242B4F6E5500F89ACA /* TimeInterval+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -287,6 +318,9 @@
 			children = (
 				46DBCF0A2B3709EE00323348 /* TableCellClickDelegate.swift */,
 				46DBCF0C2B37109700323348 /* ToolbarBackButtonDelegate.swift */,
+				46FE22492B4ED17400503092 /* CalendarDayViewDelegate.swift */,
+				46FE224B2B4ED2C000503092 /* CalendarViewDelegate.swift */,
+				463BB9262B4F73FD00F89ACA /* ChartLabelFormatterDelegate.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -294,6 +328,7 @@
 		46FE221F2B3B405300503092 /* Charts */ = {
 			isa = PBXGroup;
 			children = (
+				463BB9212B4F55F100F89ACA /* HorizontalLeaderBars */,
 				46FE22292B3B51E200503092 /* BarChart */,
 				46FE22202B3B406500503092 /* PieChart */,
 				46FE22342B4ABFA300503092 /* LabelFormatter.swift */,
@@ -316,6 +351,17 @@
 				46FE222C2B3B527100503092 /* BarChartView.swift */,
 			);
 			path = BarChart;
+			sourceTree = "<group>";
+		};
+		46FE223C2B4B2CD000503092 /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				46FE223D2B4B2D5D00503092 /* MonthView.swift */,
+				46FE223F2B4B314200503092 /* WeekView.swift */,
+				46FE22412B4B31C100503092 /* DayView.swift */,
+				46FE22452B4D6CBB00503092 /* CalendarView.swift */,
+			);
+			path = Calendar;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -453,16 +499,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				46FE22312B41BAC800503092 /* NSDate+Extensions.swift in Sources */,
+				46FE22422B4B31C100503092 /* DayView.swift in Sources */,
 				46DBCF092B36F6B300323348 /* Navigator.swift in Sources */,
 				46F8FC402B246EBB003153BE /* MainAppContentViewController.swift in Sources */,
+				46FE22402B4B314200503092 /* WeekView.swift in Sources */,
 				46DBCF002B36033000323348 /* ReportManager.swift in Sources */,
 				46D1D6862B0D3DDA00E7B31D /* FadeInAnimator.swift in Sources */,
 				46B1D5032B08B8010091E1A9 /* AppDelegate.swift in Sources */,
+				46FE22482B4D72A700503092 /* DashboardViewController.swift in Sources */,
+				46FE224A2B4ED17400503092 /* CalendarDayViewDelegate.swift in Sources */,
+				46FE22462B4D6CBB00503092 /* CalendarView.swift in Sources */,
 				46FE22252B3B41EB00503092 /* PieChartView.swift in Sources */,
 				46F8FC392B24566F003153BE /* SidebarHeaderView.swift in Sources */,
 				46DBCF022B36035700323348 /* ReporterManager.swift in Sources */,
 				46DBCF0B2B3709EE00323348 /* TableCellClickDelegate.swift in Sources */,
+				463BB9252B4F6E5500F89ACA /* TimeInterval+Extensions.swift in Sources */,
 				46D1D6A62B12887B00E7B31D /* SetupItemTableCellView.swift in Sources */,
+				46FE223E2B4B2D5D00503092 /* MonthView.swift in Sources */,
 				46D1D6882B0D5D6100E7B31D /* SlideInFromLeftAnimator.swift in Sources */,
 				46FE221A2B387BAE00503092 /* ActivityDetailViewController.swift in Sources */,
 				46D1D69C2B0EB3D200E7B31D /* NSToolbar+Extensions.swift in Sources */,
@@ -472,6 +525,7 @@
 				46D1D6A02B12643600E7B31D /* SetupData.swift in Sources */,
 				46FE223B2B4AF3BC00503092 /* CGPoint+Extensions.swift in Sources */,
 				46F8FC362B244751003153BE /* Sidebar.swift in Sources */,
+				46FE224C2B4ED2C000503092 /* CalendarViewDelegate.swift in Sources */,
 				46B1D5082B08B8010091E1A9 /* TimedWork.xcdatamodeld in Sources */,
 				46F8FC202B1CE4E1003153BE /* ActivityManager.swift in Sources */,
 				46DBCEFB2B337F0200323348 /* CheckboxImageTextComboCollectionViewItem.swift in Sources */,
@@ -483,6 +537,8 @@
 				46F8FC282B1DB2C7003153BE /* NSImage+Extensions.swift in Sources */,
 				46FE22272B3B498A00503092 /* NSView+Extensions.swift in Sources */,
 				46FE221E2B38874700503092 /* SidebarItemView.swift in Sources */,
+				463BB9272B4F73FD00F89ACA /* ChartLabelFormatterDelegate.swift in Sources */,
+				463BB9232B4F565000F89ACA /* HorizontalLeaderBarsView.swift in Sources */,
 				46FE221C2B38827400503092 /* Notification+Extensions.swift in Sources */,
 				46D1D6AF2B15C47400E7B31D /* InstalledApp.swift in Sources */,
 				46F8FC3C2B246CBD003153BE /* MainAppViewController.swift in Sources */,

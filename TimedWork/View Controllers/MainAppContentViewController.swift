@@ -13,6 +13,9 @@ class MainAppContentViewController: NSViewController {
         super.viewDidLoad()
         NotificationCenter.default.addObserver(self, selector: #selector(handleAppSidebarItemClick(notification:)), name: .sidebarItem, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(handleToolbarItemClick(notification:)), name: .toolbarItem, object: nil)
+        
+        guard let vc = storyboard?.instantiateController(withIdentifier: "DashboardViewController") as? DashboardViewController else { return }
+        return Navigator.shared.navigate(from: self, to: vc)
     }
     
     @IBAction private func handleAppSidebarItemClick(notification: Notification) {
@@ -21,6 +24,10 @@ class MainAppContentViewController: NSViewController {
             guard let vc = storyboard?.instantiateController(withIdentifier: "ActivityDetailViewController") as? ActivityDetailViewController else { return }
             vc.objectID = notification.userInfo?["objectID"] as? NSManagedObjectID
             vc.activityInternalID = notification.userInfo?["internalID"] as? UUID
+            return Navigator.shared.navigate(from: self, to: vc)
+            
+        case .dashboard:
+            guard let vc = storyboard?.instantiateController(withIdentifier: "DashboardViewController") as? DashboardViewController else { return }
             return Navigator.shared.navigate(from: self, to: vc)
         default:
             return
